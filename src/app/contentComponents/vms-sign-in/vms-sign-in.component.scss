@@ -1,0 +1,51 @@
+.signInAction div {
+    text-align: center;
+}
+
+.signInAction button {
+    width: 25%;
+    margin-bottom: 10px;
+    padding: 10px 0px;
+    font-size: 16px;
+}
+
+.signInAction .btn-success {
+    color: #fff;
+    background-color: #0950a1;
+    border-color: #0950a1;
+    font-family: sans-serif;
+}
+
+.form-label {
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+    font-family: sans-serif;
+}
+
+.example-full-width {
+    width:100%;
+}
+
+.loginDetails {
+    margin-bottom: 30px;
+    padding-left: 15px;
+}
+
+.card {
+    border-radius: 4px;
+    border: 1px solid #f2f2f2;
+    box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+}
+
+.loginScreen {
+    width:50%;
+    margin: auto;
+    margin-top:110px;
+    margin-bottom:20px;
+}
+
+.errorMessage {
+    margin-bottom: 20px;
+    color: red;
+  }

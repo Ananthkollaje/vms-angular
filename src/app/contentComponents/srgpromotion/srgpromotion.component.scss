@@ -1,0 +1,54 @@
+::ng-deep {
+.locations {
+    max-height: 200px;
+    overflow-y: scroll;
+    margin-bottom: 8px;
+    border: 1px solid #ccc;
+    width: 95.5%;
+    margin-left: 13px;
+}
+.locations .mat-expansion-panel {
+    margin-bottom:2px;
+}
+.locations ul li {
+  list-style-type: none;
+  font-size:14px;
+}
+
+.locations ul li ul li {
+    padding-left: 20px;
+  }
+
+.locations ul li ul div {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+.selectAll {
+    font-size:14px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.mat-expansion-panel-header-title {
+    font-size:14px;
+    font-weight: bold;
+}
+.sendM {
+  text-align: left;
+  margin-top: -15px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: #000;
+}
+.successMessage {
+  margin-bottom: 20px;
+  color: green;
+}
+
+.errorMessage {
+  margin-bottom: 20px;
+  color: red;
+}
+
+}

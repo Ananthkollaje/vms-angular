@@ -1,0 +1,25 @@
+.demo-table {
+  width: 109%;
+  text-align: left;
+}
+
+
+.noRecords {
+  color: blue;
+  display:inline-block;
+  margin-bottom: 20px;
+}
+.errorM {
+  display: inline-block;
+  margin-top: 20px;
+  color: red;
+}
+
+.table-responsive {
+  max-height:506px;
+}
+
+//   .cdk-column-termsandconditions div:hover {
+//     white-space: nowrap;
+//     overflow: visible;
+//   }

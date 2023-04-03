@@ -1,0 +1,341 @@
+.vmsLayout {
+    background: #7f94ae;
+}
+
+.container {
+    max-width: 95%;
+}
+.mainContentSection .col-md-11 {
+   background: #fff;
+   width: 94%;
+}
+.mainContentSection .col-md-11 a {
+    display: block;
+    font-size: 12px;
+    padding: 0px 50px;
+    color: #022452;
+    z-index: 2;
+    position: absolute;
+    right: 47px;
+}
+.searchForm {
+    text-align: right;
+    height: 60px;
+}
+.searchIcon {
+    position: absolute;
+    top: 2px;
+    right: -11px;
+    font-size: 22px;
+    color: #022452;
+}
+
+::ng-deep {
+    .mainContentSection .articleContent {
+        padding-top: 10px;
+        padding-left: 10px;
+     }
+    .mainContentSection .la-ball-scale-multiple.la-3x {
+        left: 52.5% !important;
+    }
+    .mat-placeholder-required {
+        color: red;
+    }
+    .mat-form-field-subscript-wrapper {
+        padding-left:0px !important;
+    }
+    .mat-form-field-hint-wrapper {
+        display:block !important;
+    }
+    .mainContentSection .col-md-11 .mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: transparent;
+    }
+    
+    .mainContentSection .col-md-11 .mat-form-field-appearance-fill .mat-form-field-infix {
+        padding: 5px 0px;
+    }
+    .mainContentSection .col-md-11 .mat-form-field-flex {
+        padding-left: 0px;
+    }
+
+    .eventsearch .mat-form-field {
+        display:block !important;
+    }
+
+    .eventsearch {
+        margin: auto;
+    }
+
+    .configError, .req {
+        color: red;
+    }
+    .configError {
+        margin-left:5px;
+    }
+    .notreq {
+        color: black;
+    }
+    .notptPresent .mat-form-field-underline::before {
+      background-color: rgba(0, 0, 0, 0.42);
+      height:1px !important;
+    }
+    .ptPresent .mat-form-field-underline::before {
+        background-color: red;
+        height: 2px !important;
+    }
+    
+}
+.leftNavSection, .footerSection .col-md-1, .searchSection .col-md-1 {
+    background: #022452;
+    width: 6%;
+    padding:0px;
+}
+.contentSection {
+    min-height: 430px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.footerSection .col-md-11 {
+    background: #7f94ae;
+    width: 94%;
+    padding: 12px;
+    color: #fff;
+    height: 50px;
+}
+.searchSection {
+    width: 94%;
+    text-align: right;
+}
+
+
+// Material UI Override
+::ng-deep {
+
+.adverRegion .col-md-6 ul li {
+    list-style-type: none;
+    font-size: 14px;
+}
+
+.promotionsColumn tr th {
+    width:10%;
+}
+.mat-dialog-actions[align=end] {
+    justify-content: center !important;
+}
+.mw-100 {
+    min-width:100%;
+  }
+  .promotionsColumn th {
+    flex-shrink: 1;
+}
+.validationStar {
+    color: red;
+    margin-right:3px;
+    display: inline-block;
+}
+.mat-form-field-label-wrapper {
+    top: -20px;
+}
+.mainContentSection .mat-form-field-label {
+    font-size: 20px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 1);
+}
+.radioLabel {
+    font-size: 14px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 1);
+    margin-top: 5px;
+    margin-bottom: 4px;
+}
+.radioLabel span {
+    font-size: 16px;
+}
+.mainContentSection .mat-radio-outer-circle, .mainContentSection .mat-radio-inner-circle {
+    height: 17px;
+    width: 17px;
+}
+.mat-radio-button.mat-accent .mat-radio-inner-circle, .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple), .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple, .mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
+    background-color: #0950a1;
+}
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+    border-color: #0950a1;
+}
+.mat-ripple {
+    display: none;
+}
+.mainContentSection .mat-radio-label-content {
+    margin-top: -2px;
+    padding-left: 3px;
+}
+.mat-radio-button {
+    font-size: 14px;
+    margin-right: 5px;
+}
+.matRadioGroup {
+    text-align: left;
+}
+// .mainContentSection .mat-form-field-type-mat-native-select .mat-input-element {
+//     color: #ccc;
+//     font-size: 20px !important;
+// }
+.mat-form-field-appearance-fill .mat-form-field-underline::before {
+    height: 2px;
+}
+.mat-form-field-type-mat-native-select .mat-input-element option {
+    padding: 5px;
+}
+.mat-select-panel .mat-optgroup-label, .mat-select-panel .mat-option {
+    font-size: 14px !important;
+}
+.mainContentSection .mat-select-min-line, .mainContentSection .mat-datepicker-input,
+.mainContentSection .mat-input-element {
+    font-size: 14px;
+   // color: #ccc;
+}
+.mat-card {
+    margin: auto;
+    width: 95%;
+  //  min-height: 480px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #f2f2f2;
+    border-radius: 5px;
+    margin-top: 40px;
+}
+.promotypeSection {
+    background: #d9dcdf;
+    margin-left: 0px;
+    padding-top: 15px;
+    margin-bottom: 20px;
+    border-radius: 3px;
+}
+.promotionDetails, .offerDetails {
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 18px;
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.promoRegion, .adverRegion {
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 18px;
+    margin-left: 0px;
+    margin-right: 0px;
+    // padding-left: 0px;
+    padding-right: 0px;
+}
+
+table {
+    font-size: 14px;
+}
+
+.mat-header-cell {
+    font-size: 15px;
+    color: #000;
+}
+
+.promoRegion .col-md-4 .mat-form-field {
+    padding-right: 0px !important;
+    width:100% !important;
+}
+.promotionDetails h6, .offerDetails h6, .promoRegion h6, .adverRegion h6 {
+    background: #d9dcdf;
+    padding: 15px 15px;
+}
+.promotionPage {
+    margin: 0px;
+}
+mat-form-field {
+    width:100%;
+}
+.mat-card h5 {
+    text-align: left;
+    margin: 40px 0px;
+}
+.mat-card-actions .resetButton {
+    margin-right: 20px;
+}
+.mat-card-actions .applyButton {
+    margin-left: 20px;
+    background: #0950a1;
+    color: #fff;
+}
+.mat-card-actions .editButton {
+    margin-left: 20px !important;
+    background: #0950a1;
+    color: #fff;
+}
+.mat-card>.mat-card-actions:last-child {
+    margin: 30px 0px !important;
+}
+.mat-card-actions button {
+    padding: 3px 30px;
+}
+.mat-form-field-suffix {
+    right: -10px;
+}
+.mat-form-field.mat-focused .mat-form-field-label {
+    color: #000;
+}
+.mat-form-field.mat-focused .mat-form-field-ripple {
+    background-color: #022452;
+}
+.mat-form-field-hide-placeholder .mat-form-field-label {
+    transform: translateY(-0.59375em) scale(0.75);
+}
+.question {
+    margin-top: -6px;
+    vertical-align: middle;
+    color: #7f94ae;
+    margin-left: 12px;
+ }
+ .mainContentSection {
+    .mat-form-field-infix {
+        .txtArticle {
+            border-top: 1px solid #ccc;
+            border-left: 1px solid #ccc;
+            border-right: 1px solid #ccc;
+        }
+    }
+    .articleId-heading {
+       margin-bottom: 0;
+    }
+    .article-error-message {
+       color: red;
+    }
+    .discount-percent-error {
+       color: red;
+       font-size: 15px;
+       font-weight: 400;
+       margin-top:-20px;
+    }
+    .promo-details-align {
+       margin-bottom: 0;
+    }
+ }
+
+}
+
+.promotypeSection {
+    background: #d9dcdf;
+    margin-left: 12px;
+    padding-top: 15px;
+    margin-bottom: 20px;
+    border-radius: 3px;
+}
+
+.sessionExp {
+    position: absolute;
+    top: 23%;
+    left: 49%;
+    color: red;
+    font-size:16px;
+}

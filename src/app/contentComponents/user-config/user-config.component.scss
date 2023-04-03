@@ -1,0 +1,32 @@
+.promotypeSection .col-md-3 {
+    margin:auto;
+}
+
+::ng-deep { 
+    .createFields {
+        padding: 0px 15px;
+        background: #fff;
+        margin-left: 0px;
+        padding-top: 25px;
+    }
+    .table-responsive {
+        max-height: 506px;
+        width: 95%;
+        margin: auto;
+    }
+    .table-responsive .demo-table {
+        width: 100%;
+    }
+    .table-responsive tbody {
+        text-align: left;
+    }
+    .messages {
+        margin-bottom: 20px;
+        color: green;
+        font-size: 18px;
+    }
+    .errorMessage {
+        margin-bottom: 20px;
+        color: red;
+      }
+}

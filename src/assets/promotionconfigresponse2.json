@@ -1,0 +1,622 @@
+{
+  "systemConfig": {
+    "configMap": {
+      "PROMOTION_TYPE": [
+        {
+          "code": "TYPE1",
+          "value": "Personalised",
+          "order": 1,
+          "isDefault": false,
+          "fieldType": "PROMOTION_TYPE",
+          "configType": "SYSTEM"
+        },
+        {
+          "code": "TYPE2",
+          "value": "Generic",
+          "order": 2,
+          "isDefault": false,
+          "fieldType": "PROMOTION_TYPE",
+          "configType": "SYSTEM"
+        },
+        {
+          "code": "TYPE3",
+          "value": "Journey",
+          "order": 3,
+          "isDefault": true,
+          "fieldType": "PROMOTION_TYPE",
+          "configType": "SYSTEM"
+        },
+        {
+          "code": "TYPE4",
+          "value": "Public",
+          "order": 4,
+          "isDefault": false,
+          "fieldType": "PROMOTION_TYPE",
+          "configType": "SYSTEM"
+        },
+        {
+          "code": "TYPE5",
+          "value": "Anonymous",
+          "order": 5,
+          "isDefault": false,
+          "fieldType": "PROMOTION_TYPE",
+          "configType": "SYSTEM"
+        }
+      ],
+      "PROMOTION_EVENT_TYPE": [
+        {
+          "code": "EVENTTYPE1",
+          "value": "Personalised",
+          "order": 1,
+          "isDefault": false,
+          "fieldType": "PROMOTION_EVENT_TYPE",
+          "configType": "SYSTEM"
+        },
+        {
+          "code": "EVENTTYPE2",
+          "value": "Generic",
+          "order": 2,
+          "isDefault": false,
+          "fieldType": "PROMOTION_EVENT_TYPE",
+          "configType": "SYSTEM"
+        },
+        {
+          "code": "EVENTTYPE3",
+          "value": "Journey",
+          "order": 3,
+          "isDefault": true,
+          "fieldType": "PROMOTION_EVENT_TYPE",
+          "configType": "SYSTEM"
+        },
+        {
+          "code": "EVENTTYPE4",
+          "value": "Public",
+          "order": 4,
+          "isDefault": false,
+          "fieldType": "PROMOTION_EVENT_TYPE",
+          "configType": "SYSTEM"
+        },
+        {
+          "code": "EVENTTYPE5",
+          "value": "Anonymous",
+          "order": 5,
+          "isDefault": false,
+          "fieldType": "PROMOTION_EVENT_TYPE",
+          "configType": "SYSTEM"
+        }
+      ],
+      "PROMOTION_STATUS": [
+        {
+          "code": "INACTIVE",
+          "value": "Inactive",
+          "order": 1,
+          "isDefault": true,
+          "fieldType": "PROMOTION_STATUS",
+          "configType": "SYSTEM"
+        },
+        {
+          "code": "ACTIVE",
+          "value": "Active",
+          "order": 2,
+          "isDefault": false,
+          "fieldType": "PROMOTION_STATUS",
+          "configType": "SYSTEM"
+        }
+      ],
+      "REDEEMABLE_BY": [
+        {
+          "code": "AO",
+          "value": "Anyone",
+          "order": 1,
+          "isDefault": true,
+          "fieldType": "REDEEMABLE_BY",
+          "configType": "SYSTEM"
+        },
+        {
+          "code": "AM",
+          "value": "Any Member",
+          "order": 2,
+          "isDefault": false,
+          "fieldType": "REDEEMABLE_BY",
+          "configType": "SYSTEM"
+        },
+        {
+          "code": "RM",
+          "value": "Receiving Member",
+          "order": 3,
+          "isDefault": false,
+          "fieldType": "REDEEMABLE_BY",
+          "configType": "SYSTEM"
+        }
+      ],
+      "SALES_CHANNEL": [
+        {
+          "code": "IN",
+          "value": "Instore",
+          "order": 1,
+          "isDefault": true,
+          "fieldType": "SALES_CHANNEL",
+          "configType": "SYSTEM"
+        },
+        {
+          "code": "ON",
+          "value": "Online",
+          "order": 2,
+          "isDefault": false,
+          "fieldType": "SALES_CHANNEL",
+          "configType": "SYSTEM"
+        },
+        {
+          "code": "IO",
+          "value": "Instore and Online",
+          "order": 3,
+          "isDefault": false,
+          "fieldType": "SALES_CHANNEL",
+          "configType": "SYSTEM"
+        }
+      ],
+      "DISCOUNT_TYPE": [
+        {
+          "code": "PO",
+          "value": "% Off",
+          "order": 1,
+          "isDefault": true,
+          "fieldType": "DISCOUNT_TYPE",
+          "configType": "SYSTEM"
+        },
+        {
+          "code": "DO",
+          "value": "$ Off",
+          "order": 2,
+          "isDefault": false,
+          "fieldType": "DISCOUNT_TYPE",
+          "configType": "SYSTEM"
+        }
+      ],
+      "QR_CODE_COLOUR": [
+        {
+          "code": "BK",
+          "value": "Black",
+          "order": 1,
+          "isDefault": false,
+          "fieldType": "QR_CODE_COLOUR",
+          "configType": "SYSTEM"
+        },
+        {
+          "code": "BL",
+          "value": "Blue",
+          "order": 2,
+          "isDefault": true,
+          "fieldType": "QR_CODE_COLOUR",
+          "configType": "SYSTEM"
+        },
+        {
+          "code": "RD",
+          "value": "Red",
+          "order": 3,
+          "isDefault": false,
+          "fieldType": "QR_CODE_COLOUR",
+          "configType": "SYSTEM"
+        },
+        {
+          "code": "OG",
+          "value": "Orange",
+          "order": 4,
+          "isDefault": false,
+          "fieldType": "QR_CODE_COLOUR",
+          "configType": "SYSTEM"
+        },
+        {
+          "code": "GR",
+          "value": "Green",
+          "order": 5,
+          "isDefault": false,
+          "fieldType": "QR_CODE_COLOUR",
+          "configType": "SYSTEM"
+        },
+        {
+          "code": "GY",
+          "value": "Grey",
+          "order": 6,
+          "isDefault": false,
+          "fieldType": "QR_CODE_COLOUR",
+          "configType": "SYSTEM"
+        }
+      ]
+    },
+    "salesLocation": [
+      {
+        "brand": [
+          {
+            "code": "SP",
+            "name": "Spotlight",
+            "countries": [
+              {
+                "code": "AU",
+                "name": "Australia",
+                "states": [
+                  {
+                    "code": "SA",
+                    "name": "South Australia",
+                    "stores": [
+                      {
+                        "id": "1004",
+                        "name": "Arndale"
+                      },
+                      {
+                        "id": "1005",
+                        "name": "Elizabeth"
+                      },
+                      {
+                        "id": "1006",
+                        "name": "West Lakes"
+                      },
+                      {
+                        "id": "1008",
+                        "name": "Tea Tree Plaza"
+                      },
+                      {
+                        "id": "1010",
+                        "name": "Whyalla"
+                      },
+                      {
+                        "id": "1011",
+                        "name": "Marion"
+                      },
+                      {
+                        "id": "1012",
+                        "name": "Colonnades"
+                      },
+                      {
+                        "id": "1013",
+                        "name": "Gepps Cross"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "VIC",
+                    "name": "Victoria",
+                    "stores": [
+                      {
+                        "id": "2014",
+                        "name": "Mornington"
+                      },
+                      {
+                        "id": "2016",
+                        "name": "Spencer Outlet"
+                      },
+                      {
+                        "id": "2017",
+                        "name": "Woodgrove"
+                      },
+                      {
+                        "id": "2019",
+                        "name": "Ballarat"
+                      },
+                      {
+                        "id": "2020",
+                        "name": "Forest Hill"
+                      },
+                      {
+                        "id": "2021",
+                        "name": "Geelong"
+                      },
+                      {
+                        "id": "2022",
+                        "name": "Knox"
+                      },
+                      {
+                        "id": "2023",
+                        "name": "Epping"
+                      },
+                      {
+                        "id": "2024",
+                        "name": "Highpoint"
+                      },
+                      {
+                        "id": "2025",
+                        "name": "Southland"
+                      },
+                      {
+                        "id": "2026",
+                        "name": "Shepparton"
+                      },
+                      {
+                        "id": "2027",
+                        "name": "Airport West"
+                      },
+                      {
+                        "id": "2028",
+                        "name": "Cranbourne Park"
+                      },
+                      {
+                        "id": "2029",
+                        "name": "Waurn Ponds"
+                      },
+                      {
+                        "id": "2030",
+                        "name": "Warrnambool"
+                      },
+                      {
+                        "id": "2031",
+                        "name": "Sunbury"
+                      },
+                      {
+                        "id": "2032",
+                        "name": "Traralgon"
+                      },
+                      {
+                        "id": "2033",
+                        "name": "Eastland"
+                      },
+                      {
+                        "id": "2039",
+                        "name": "Fountain Gate"
+                      },
+                      {
+                        "id": "2040",
+                        "name": "Preston"
+                      },
+                      {
+                        "id": "2042",
+                        "name": "Carnegie"
+                      },
+                      {
+                        "id": "2045",
+                        "name": "Frankston"
+                      },
+                      {
+                        "id": "2048",
+                        "name": "Tarneit"
+                      },
+                      {
+                        "id": "2056",
+                        "name": "South Morang"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "TAS",
+                    "name": "Tasmania",
+                    "stores": [
+                      {
+                        "id": "4041",
+                        "name": "Moonah"
+                      },
+                      {
+                        "id": "4043",
+                        "name": "Launceston"
+                      },
+                      {
+                        "id": "4044",
+                        "name": "Devonport"
+                      },
+                      {
+                        "id": "4045",
+                        "name": "Ulverstone"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "NSW",
+                    "name": "New South Wales",
+                    "stores": [
+                      {
+                        "id": "5053",
+                        "name": "Shellharbour"
+                      },
+                      {
+                        "id": "5058",
+                        "name": "Bennetts Green"
+                      },
+                      {
+                        "id": "5089",
+                        "name": "Rockdale"
+                      },
+                      {
+                        "id": "6068",
+                        "name": "Wagga Wagga"
+                      },
+                      {
+                        "id": "6075",
+                        "name": "Merimbula"
+                      },
+                      {
+                        "id": "6076",
+                        "name": "Moruya"
+                      },
+                      {
+                        "id": "6078",
+                        "name": "Ulladulla"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "ACT",
+                    "name": "Australian Capital Territory",
+                    "stores": [
+                      {
+                        "id": "6059",
+                        "name": "Belconnen"
+                      },
+                      {
+                        "id": "6063",
+                        "name": "Fyshwick"
+                      },
+                      {
+                        "id": "6065",
+                        "name": "Tuggeranong"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "QLD",
+                    "name": "Queensland",
+                    "stores": [
+                      {
+                        "id": "9090",
+                        "name": "Maroochydore"
+                      },
+                      {
+                        "id": "9095",
+                        "name": "Chermside"
+                      },
+                      {
+                        "id": "9098",
+                        "name": "Carindale"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "userConfig": {
+    "configMap": {
+      "CONFIG": [
+        {
+          "code": "FINANCIALYEAR",
+          "value": "2040",
+          "order": 1,
+          "isDefault": false,
+          "fieldType": "CONFIG",
+          "configType": "USER"
+        },
+        {
+          "code": "TOLERANCEDAYS",
+          "value": "7",
+          "order": 1,
+          "isDefault": false,
+          "fieldType": "CONFIG",
+          "configType": "USER"
+        },
+        {
+          "code": "EXTENDABLEDAYS",
+          "value": "14",
+          "order": 1,
+          "isDefault": false,
+          "fieldType": "CONFIG",
+          "configType": "USER"
+        }
+      ],
+      "ADVERTISING_CHANNEL": [
+        {
+          "code": "DM",
+          "value": "Direct Mail",
+          "order": 1,
+          "isDefault": false,
+          "fieldType": "ADVERTISING_CHANNEL",
+          "configType": "USER"
+        },
+        {
+          "code": "eDM",
+          "value": "Email",
+          "order": 2,
+          "isDefault": true,
+          "fieldType": "ADVERTISING_CHANNEL",
+          "configType": "USER"
+        },
+        {
+          "code": "SMS",
+          "value": "Text Message",
+          "order": 3,
+          "isDefault": false,
+          "fieldType": "ADVERTISING_CHANNEL",
+          "configType": "USER"
+        },
+        {
+          "code": "CT",
+          "value": "Catalogue",
+          "order": 4,
+          "isDefault": false,
+          "fieldType": "ADVERTISING_CHANNEL",
+          "configType": "USER"
+        },
+        {
+          "code": "FL",
+          "value": "Instore Flyer",
+          "order": 5,
+          "isDefault": false,
+          "fieldType": "ADVERTISING_CHANNEL",
+          "configType": "USER"
+        },
+        {
+          "code": "PA",
+          "value": "Press Ad",
+          "order": 6,
+          "isDefault": false,
+          "fieldType": "ADVERTISING_CHANNEL",
+          "configType": "USER"
+        },
+        {
+          "code": "MG",
+          "value": "Magazine",
+          "order": 7,
+          "isDefault": true,
+          "fieldType": "ADVERTISING_CHANNEL",
+          "configType": "USER"
+        },
+        {
+          "code": "SO",
+          "value": "Social",
+          "order": 8,
+          "isDefault": false,
+          "fieldType": "ADVERTISING_CHANNEL",
+          "configType": "USER"
+        },
+        {
+          "code": "WB",
+          "value": "Website",
+          "order": 9,
+          "isDefault": false,
+          "fieldType": "ADVERTISING_CHANNEL",
+          "configType": "USER"
+        },
+        {
+          "code": "AF",
+          "value": "Affiliate",
+          "order": 10,
+          "isDefault": false,
+          "fieldType": "ADVERTISING_CHANNEL",
+          "configType": "USER"
+        },
+        {
+          "code": "3P",
+          "value": "3rd Party",
+          "order": 11,
+          "isDefault": true,
+          "fieldType": "ADVERTISING_CHANNEL",
+          "configType": "USER"
+        }
+      ]
+    },
+    "sourceMarket": [
+      {
+        "countryCode": "AU",
+        "brand": [
+          {
+            "code": "SP",
+            "name": "Spotlight"
+          },
+          {
+            "code": "AN",
+            "name": "Anaconda"
+          }
+        ]
+      },
+      {
+        "countryCode": "NZ",
+        "brand": [
+          {
+            "code": "SP",
+            "name": "Spotlight"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+
+<div class="vmsLayout">
+    <div class="container">
+        <div class="headerSection">
+            <app-header [userLoggedIn]="loggedIn"></app-header>
+        </div>
+        <!-- <div class="row searchSection">
+            <div class="col-md-1"></div>
+            <div class="col-md-11">
+                <a href="#">Advanced Search</a>
+            </div>
+        </div> -->
+        <div class="row mainContentSection">
+            <div class="col-md-1 leftNavSection">
+                <app-left-navigation></app-left-navigation>
+            </div>
+            <div class="col-md-11">
+                <!-- <form class="searchForm">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                      <input matInput placeholder="Search by: Voucher Name ">
+                      <span class="material-icons searchIcon">search</span>
+                    </mat-form-field>
+                  </form>
+                <a class="button" routerLink="/advancesearch">Advanced Search</a> -->
+                <!-- <a class="button" routerLink="/advancesearch">Advanced Search1</a> -->
+                <div class="contentSection">
+                    <!-- <app-homepage></app-homepage>
+                    <app-advanced-search></app-advanced-search> -->
+                    <!-- <div *ngIf="sessionExpired" class="sessionExp">Session Expired</div> -->
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </div>
+        <div class="row footerSection">
+            <div class="col-md-1"></div>
+            <div class="col-md-11">
+            <app-footer></app-footer>
+            </div>
+        </div>
+    </div>
+    
+</div>

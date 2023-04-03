@@ -1,0 +1,27 @@
+.demo-table {
+    width: 350%;
+    text-align: left;
+  }
+
+  .cdk-column-termsandconditions {
+      width: 5%;
+  }
+
+  .cdk-column-termsandconditions div {
+    overflow-x: auto;
+    height: 40px;
+  }
+  .noRecords {
+    color: blue;
+    display:inline-block;
+    margin-bottom: 20px;
+  }
+  .errorM {
+    display: inline-block;
+    margin-top: 20px;
+    color: red;
+  }
+  .table-responsive {
+    max-height:506px;
+  }
+

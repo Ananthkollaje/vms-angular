@@ -1,0 +1,1632 @@
+{
+  "systemConfig": {
+    "configMap": {
+      "PROMOTION_TYPE": [
+        {
+          "code": "TYPE1",
+          "value": "Personalised",
+          "order": 1,
+          "isDefault": false,
+          "fieldType": "PROMOTION_TYPE",
+          "configType": "SYSTEM"
+        },
+        {
+          "code": "TYPE2",
+          "value": "Generic",
+          "order": 2,
+          "isDefault": false,
+          "fieldType": "PROMOTION_TYPE",
+          "configType": "SYSTEM"
+        },
+        {
+          "code": "TYPE3",
+          "value": "Journey",
+          "order": 3,
+          "isDefault": true,
+          "fieldType": "PROMOTION_TYPE",
+          "configType": "SYSTEM"
+        },
+        {
+          "code": "TYPE4",
+          "value": "Public",
+          "order": 4,
+          "isDefault": false,
+          "fieldType": "PROMOTION_TYPE",
+          "configType": "SYSTEM"
+        },
+        {
+          "code": "TYPE5",
+          "value": "Anonymous",
+          "order": 5,
+          "isDefault": false,
+          "fieldType": "PROMOTION_TYPE",
+          "configType": "SYSTEM"
+        }
+      ],
+      "PROMOTION_EVENT_TYPE": [
+        {
+          "code": "EVENTTYPE1",
+          "value": "Personalised",
+          "order": 1,
+          "isDefault": false,
+          "fieldType": "PROMOTION_EVENT_TYPE",
+          "configType": "SYSTEM"
+        },
+        {
+          "code": "EVENTTYPE2",
+          "value": "Generic",
+          "order": 2,
+          "isDefault": false,
+          "fieldType": "PROMOTION_EVENT_TYPE",
+          "configType": "SYSTEM"
+        },
+        {
+          "code": "EVENTTYPE3",
+          "value": "Journey",
+          "order": 3,
+          "isDefault": true,
+          "fieldType": "PROMOTION_EVENT_TYPE",
+          "configType": "SYSTEM"
+        },
+        {
+          "code": "EVENTTYPE4",
+          "value": "Public",
+          "order": 4,
+          "isDefault": false,
+          "fieldType": "PROMOTION_EVENT_TYPE",
+          "configType": "SYSTEM"
+        },
+        {
+          "code": "EVENTTYPE5",
+          "value": "Anonymous",
+          "order": 5,
+          "isDefault": false,
+          "fieldType": "PROMOTION_EVENT_TYPE",
+          "configType": "SYSTEM"
+        }
+      ],
+      "PROMOTION_STATUS": [
+        {
+          "code": "INACTIVE",
+          "value": "Inactive",
+          "order": 1,
+          "isDefault": true,
+          "fieldType": "PROMOTION_STATUS",
+          "configType": "SYSTEM"
+        },
+        {
+          "code": "ACTIVE",
+          "value": "Active",
+          "order": 2,
+          "isDefault": false,
+          "fieldType": "PROMOTION_STATUS",
+          "configType": "SYSTEM"
+        }
+      ],
+      "REDEEMABLE_BY": [
+        {
+          "code": "AO",
+          "value": "Anyone",
+          "order": 1,
+          "isDefault": false,
+          "fieldType": "REDEEMABLE_BY",
+          "configType": "SYSTEM"
+        },
+        {
+          "code": "AM",
+          "value": "Any Member",
+          "order": 2,
+          "isDefault": true,
+          "fieldType": "REDEEMABLE_BY",
+          "configType": "SYSTEM"
+        },
+        {
+          "code": "RM",
+          "value": "Receiving Member",
+          "order": 3,
+          "isDefault": false,
+          "fieldType": "REDEEMABLE_BY",
+          "configType": "SYSTEM"
+        }
+      ],
+      "SALES_CHANNEL": [
+        {
+          "code": "IN",
+          "value": "Instore",
+          "order": 1,
+          "isDefault": false,
+          "fieldType": "SALES_CHANNEL",
+          "configType": "SYSTEM"
+        },
+        {
+          "code": "ON",
+          "value": "Online",
+          "order": 2,
+          "isDefault": false,
+          "fieldType": "SALES_CHANNEL",
+          "configType": "SYSTEM"
+        },
+        {
+          "code": "IO",
+          "value": "Instore and Online",
+          "order": 3,
+          "isDefault": true,
+          "fieldType": "SALES_CHANNEL",
+          "configType": "SYSTEM"
+        }
+      ],
+      "DISCOUNT_TYPE": [
+        {
+          "code": "PO",
+          "value": "% Off",
+          "order": 1,
+          "isDefault": true,
+          "fieldType": "DISCOUNT_TYPE",
+          "configType": "SYSTEM"
+        },
+        {
+          "code": "DO",
+          "value": "$ Off",
+          "order": 2,
+          "isDefault": false,
+          "fieldType": "DISCOUNT_TYPE",
+          "configType": "SYSTEM"
+        }
+      ],
+      "QR_CODE_COLOUR": [
+        {
+          "code": "BK",
+          "value": "Black",
+          "order": 1,
+          "isDefault": false,
+          "fieldType": "QR_CODE_COLOUR",
+          "configType": "SYSTEM"
+        },
+        {
+          "code": "BL",
+          "value": "Blue",
+          "order": 2,
+          "isDefault": true,
+          "fieldType": "QR_CODE_COLOUR",
+          "configType": "SYSTEM"
+        },
+        {
+          "code": "RD",
+          "value": "Red",
+          "order": 3,
+          "isDefault": false,
+          "fieldType": "QR_CODE_COLOUR",
+          "configType": "SYSTEM"
+        },
+        {
+          "code": "OG",
+          "value": "Orange",
+          "order": 4,
+          "isDefault": false,
+          "fieldType": "QR_CODE_COLOUR",
+          "configType": "SYSTEM"
+        },
+        {
+          "code": "GR",
+          "value": "Green",
+          "order": 5,
+          "isDefault": false,
+          "fieldType": "QR_CODE_COLOUR",
+          "configType": "SYSTEM"
+        },
+        {
+          "code": "GY",
+          "value": "Grey",
+          "order": 6,
+          "isDefault": false,
+          "fieldType": "QR_CODE_COLOUR",
+          "configType": "SYSTEM"
+        }
+      ]
+    }
+  },
+  "userConfig": {
+    "sourceMarket": [
+      {
+        "code": "AU",
+        "name": "Australia",
+        "isDefault": true,
+        "brand": [
+          {
+            "code": "SP",
+            "name": "Spotlight",
+            "isDefault": true,
+            "states": [
+              {
+                "code": "NSW",
+                "name": "New South Wales",
+                "stores": [
+                  {
+                    "id": "S019",
+                    "name": "Spotlight Penrith"
+                  },
+                  {
+                    "id": "S020",
+                    "name": "Spotlight Wollongong"
+                  },
+                  {
+                    "id": "S021",
+                    "name": "Spotlight Albury"
+                  },
+                  {
+                    "id": "S024",
+                    "name": "Spotlight West Gosford"
+                  },
+                  {
+                    "id": "S028",
+                    "name": "Spotlight Bondi Junction"
+                  },
+                  {
+                    "id": "S030",
+                    "name": "Spotlight Birkenhead Point"
+                  },
+                  {
+                    "id": "S037",
+                    "name": "Spotlight Campbelltown"
+                  },
+                  {
+                    "id": "S040",
+                    "name": "Spotlight Tamworth"
+                  },
+                  {
+                    "id": "S041",
+                    "name": "Spotlight Dubbo"
+                  },
+                  {
+                    "id": "S042",
+                    "name": "Spotlight Queanbeyan"
+                  },
+                  {
+                    "id": "S045",
+                    "name": "Spotlight Lidcombe"
+                  },
+                  {
+                    "id": "S048",
+                    "name": "Spotlight Lismore"
+                  },
+                  {
+                    "id": "S050",
+                    "name": "Spotlight Belrose"
+                  },
+                  {
+                    "id": "S053",
+                    "name": "Spotlight Rockdale"
+                  },
+                  {
+                    "id": "S054",
+                    "name": "Spotlight Bathurst"
+                  },
+                  {
+                    "id": "S062",
+                    "name": "Spotlight Taree"
+                  },
+                  {
+                    "id": "S081",
+                    "name": "Spotlight Tuggerah"
+                  },
+                  {
+                    "id": "S082",
+                    "name": "Spotlight Coffs Harbour"
+                  },
+                  {
+                    "id": "S088",
+                    "name": "Spotlight Castle Hill"
+                  },
+                  {
+                    "id": "S099",
+                    "name": "Spotlight Port Macquarie"
+                  },
+                  {
+                    "id": "S100",
+                    "name": "Spotlight Nowra"
+                  },
+                  {
+                    "id": "S105",
+                    "name": "Spotlight Mount Druitt"
+                  },
+                  {
+                    "id": "S109",
+                    "name": "Spotlight Rutherford"
+                  },
+                  {
+                    "id": "S121",
+                    "name": "Spotlight Miranda"
+                  },
+                  {
+                    "id": "S123",
+                    "name": "Spotlight Wagga Wagga"
+                  },
+                  {
+                    "id": "S125",
+                    "name": "Spotlight Wetherill Park"
+                  },
+                  {
+                    "id": "S127",
+                    "name": "Spotlight Ballina"
+                  },
+                  {
+                    "id": "S134",
+                    "name": "Spotlight Forbes"
+                  },
+                  {
+                    "id": "S136",
+                    "name": "Spotlight Griffith"
+                  },
+                  {
+                    "id": "S137",
+                    "name": "Spotlight Orange"
+                  },
+                  {
+                    "id": "S138",
+                    "name": "Spotlight Armidale"
+                  },
+                  {
+                    "id": "S148",
+                    "name": "Spotlight Grafton"
+                  },
+                  {
+                    "id": "S152",
+                    "name": "Spotlight Hornsby"
+                  },
+                  {
+                    "id": "S153",
+                    "name": "Spotlight Gungahlin"
+                  },
+                  {
+                    "id": "S165",
+                    "name": "Spotlight Mittagong"
+                  },
+                  {
+                    "id": "S166",
+                    "name": "Spotlight Bennetts Green"
+                  },
+                  {
+                    "id": "S174",
+                    "name": "Spotlight Alexandria"
+                  }
+                ]
+              },
+              {
+                "code": "NT",
+                "name": "Northern Territory",
+                "stores": [
+                  {
+                    "id": "S057",
+                    "name": "Spotlight Darwin"
+                  }
+                ]
+              },
+              {
+                "code": "QLD",
+                "name": "Queensland",
+                "stores": [
+                  {
+                    "id": "S035",
+                    "name": "Spotlight Everton Park"
+                  },
+                  {
+                    "id": "S036",
+                    "name": "Spotlight Mt Gravatt"
+                  },
+                  {
+                    "id": "S038",
+                    "name": "Spotlight Logan"
+                  },
+                  {
+                    "id": "S039",
+                    "name": "Spotlight Ashmore"
+                  },
+                  {
+                    "id": "S043",
+                    "name": "Spotlight Townsville"
+                  },
+                  {
+                    "id": "S046",
+                    "name": "Spotlight Mackay"
+                  },
+                  {
+                    "id": "S047",
+                    "name": "Spotlight Rockhampton"
+                  },
+                  {
+                    "id": "S055",
+                    "name": "Spotlight Indooroopilly"
+                  },
+                  {
+                    "id": "S069",
+                    "name": "Spotlight Bundaberg"
+                  },
+                  {
+                    "id": "S079",
+                    "name": "Spotlight West Burleigh"
+                  },
+                  {
+                    "id": "S080",
+                    "name": "Spotlight Maroochydore"
+                  },
+                  {
+                    "id": "S094",
+                    "name": "Spotlight Cairns"
+                  },
+                  {
+                    "id": "S096",
+                    "name": "Spotlight Browns Plains"
+                  },
+                  {
+                    "id": "S111",
+                    "name": "Spotlight Morayfield"
+                  },
+                  {
+                    "id": "S116",
+                    "name": "Spotlight Ipswich"
+                  },
+                  {
+                    "id": "S118",
+                    "name": "Spotlight Toowoomba"
+                  },
+                  {
+                    "id": "S129",
+                    "name": "Spotlight Springfield"
+                  },
+                  {
+                    "id": "S131",
+                    "name": "Spotlight Capalaba"
+                  },
+                  {
+                    "id": "S139",
+                    "name": "Spotlight Hervey Bay"
+                  },
+                  {
+                    "id": "S147",
+                    "name": "Spotlight Gladstone"
+                  },
+                  {
+                    "id": "S149",
+                    "name": "Spotlight North Lakes"
+                  },
+                  {
+                    "id": "S154",
+                    "name": "Spotlight Upper Coomera"
+                  },
+                  {
+                    "id": "S161",
+                    "name": "Spotlight Carindale"
+                  },
+                  {
+                    "id": "S168",
+                    "name": "Spotlight Windsor"
+                  },
+                  {
+                    "id": "S175",
+                    "name": "Spotlight Robina"
+                  },
+                  {
+                    "id": "S176",
+                    "name": "Spotlight Creative Hyperdome"
+                  }
+                ]
+              },
+              {
+                "code": "SA",
+                "name": "South Australia",
+                "stores": [
+                  {
+                    "id": "S025",
+                    "name": "Spotlight Trinity Gardens"
+                  },
+                  {
+                    "id": "S044",
+                    "name": "Spotlight Munno Para"
+                  },
+                  {
+                    "id": "S072",
+                    "name": "Spotlight Melrose Park"
+                  },
+                  {
+                    "id": "S074",
+                    "name": "Spotlight Clovercrest"
+                  },
+                  {
+                    "id": "S077",
+                    "name": "Spotlight Mount Gambier"
+                  },
+                  {
+                    "id": "S106",
+                    "name": "Spotlight Mount Barker"
+                  },
+                  {
+                    "id": "S117",
+                    "name": "Spotlight Noarlunga"
+                  },
+                  {
+                    "id": "S119",
+                    "name": "Spotlight Gepps Cross"
+                  },
+                  {
+                    "id": "S124",
+                    "name": "Spotlight Albert Park"
+                  }
+                ]
+              },
+              {
+                "code": "TAS",
+                "name": "Tasmania",
+                "stores": [
+                  {
+                    "id": "S011",
+                    "name": "Spotlight Launceston"
+                  },
+                  {
+                    "id": "S060",
+                    "name": "Spotlight Glenorchy"
+                  },
+                  {
+                    "id": "S102",
+                    "name": "Spotlight Burnie"
+                  }
+                ]
+              },
+              {
+                "code": "VIC",
+                "name": "Victoria",
+                "stores": [
+                  {
+                    "id": "S002",
+                    "name": "Spotlight Box Hill"
+                  },
+                  {
+                    "id": "S004",
+                    "name": "Spotlight Mentone"
+                  },
+                  {
+                    "id": "S005",
+                    "name": "Spotlight Sandown"
+                  },
+                  {
+                    "id": "S006",
+                    "name": "Spotlight Geelong"
+                  },
+                  {
+                    "id": "S008",
+                    "name": "Spotlight Essendon"
+                  },
+                  {
+                    "id": "S009",
+                    "name": "Spotlight Traralgon"
+                  },
+                  {
+                    "id": "S010",
+                    "name": "Spotlight Maribyrnong"
+                  },
+                  {
+                    "id": "S013",
+                    "name": "Spotlight Ballarat"
+                  },
+                  {
+                    "id": "S014",
+                    "name": "Spotlight Bayswater"
+                  },
+                  {
+                    "id": "S015",
+                    "name": "Spotlight Bairnsdale"
+                  },
+                  {
+                    "id": "S016",
+                    "name": "Spotlight Sale"
+                  },
+                  {
+                    "id": "S017",
+                    "name": "Spotlight Mildura"
+                  },
+                  {
+                    "id": "S026",
+                    "name": "Spotlight Bendigo"
+                  },
+                  {
+                    "id": "S027",
+                    "name": "Spotlight South Melbourne"
+                  },
+                  {
+                    "id": "S029",
+                    "name": "Spotlight Shepparton"
+                  },
+                  {
+                    "id": "S034",
+                    "name": "Spotlight Hoppers Crossing"
+                  },
+                  {
+                    "id": "S049",
+                    "name": "Spotlight Horsham"
+                  },
+                  {
+                    "id": "S070",
+                    "name": "Spotlight Fountain Gate"
+                  },
+                  {
+                    "id": "S098",
+                    "name": "Spotlight Burnside"
+                  },
+                  {
+                    "id": "S110",
+                    "name": "Spotlight Frankston"
+                  },
+                  {
+                    "id": "S112",
+                    "name": "Spotlight Warrnambool"
+                  },
+                  {
+                    "id": "S113",
+                    "name": "Spotlight South Morang"
+                  },
+                  {
+                    "id": "S114",
+                    "name": "Spotlight Carnegie"
+                  },
+                  {
+                    "id": "S120",
+                    "name": "Spotlight Preston"
+                  },
+                  {
+                    "id": "S132",
+                    "name": "Spotlight Wangaratta"
+                  },
+                  {
+                    "id": "S135",
+                    "name": "Spotlight Cranbourne"
+                  },
+                  {
+                    "id": "S145",
+                    "name": "Spotlight Roxburgh Park"
+                  },
+                  {
+                    "id": "S159",
+                    "name": "Spotlight The Glen"
+                  }
+                ]
+              },
+              {
+                "code": "WA",
+                "name": "Western Australia",
+                "stores": [
+                  {
+                    "id": "S052",
+                    "name": "Spotlight Innaloo"
+                  },
+                  {
+                    "id": "S058",
+                    "name": "Spotlight Midland"
+                  },
+                  {
+                    "id": "S063",
+                    "name": "Spotlight Cannington"
+                  },
+                  {
+                    "id": "S065",
+                    "name": "Spotlight Rockingham"
+                  },
+                  {
+                    "id": "S073",
+                    "name": "Spotlight Joondalup"
+                  },
+                  {
+                    "id": "S084",
+                    "name": "Spotlight Bunbury"
+                  },
+                  {
+                    "id": "S104",
+                    "name": "Spotlight Mandurah"
+                  },
+                  {
+                    "id": "S107",
+                    "name": "Spotlight Geraldton"
+                  },
+                  {
+                    "id": "S115",
+                    "name": "Spotlight Albany"
+                  },
+                  {
+                    "id": "S122",
+                    "name": "Spotlight Cockburn"
+                  },
+                  {
+                    "id": "S146",
+                    "name": "Spotlight Busselton"
+                  },
+                  {
+                    "id": "S162",
+                    "name": "Spotlight Butler"
+                  },
+                  {
+                    "id": "S163",
+                    "name": "Spotlight Ellenbrook"
+                  },
+                  {
+                    "id": "S164",
+                    "name": "Spotlight Fremantle"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "AN",
+            "name": "Anaconda",
+            "isDefault": false,
+            "states": [
+              {
+                "code": "ACT",
+                "name": "Australian Capital Territory",
+                "stores": [
+                  {
+                    "id": "A064",
+                    "name": "Anaconda Gungahlin"
+                  }
+                ]
+              },
+              {
+                "code": "NSW",
+                "name": "New South Wales",
+                "stores": [
+                  {
+                    "id": "A006",
+                    "name": "Anaconda Auburn"
+                  },
+                  {
+                    "id": "A012",
+                    "name": "Anaconda Penrith"
+                  },
+                  {
+                    "id": "A015",
+                    "name": "Anaconda Moore Park"
+                  },
+                  {
+                    "id": "A023",
+                    "name": "Anaconda West Gosford"
+                  },
+                  {
+                    "id": "A024",
+                    "name": "Anaconda Rockdale"
+                  },
+                  {
+                    "id": "A025",
+                    "name": "Anaconda Belrose"
+                  },
+                  {
+                    "id": "A027",
+                    "name": "Anaconda Fyshwick"
+                  },
+                  {
+                    "id": "A029",
+                    "name": "Anaconda Bennets Green"
+                  },
+                  {
+                    "id": "A031",
+                    "name": "Anaconda Port Macquarie"
+                  },
+                  {
+                    "id": "A033",
+                    "name": "Anaconda Wagga Wagga"
+                  },
+                  {
+                    "id": "A044",
+                    "name": "Anaconda Warringah"
+                  },
+                  {
+                    "id": "A045",
+                    "name": "Anaconda Wollongong"
+                  },
+                  {
+                    "id": "A051",
+                    "name": "Anaconda Rutherford"
+                  },
+                  {
+                    "id": "A059",
+                    "name": "Anaconda Chatswood"
+                  },
+                  {
+                    "id": "A061",
+                    "name": "Anaconda Marsden Park"
+                  },
+                  {
+                    "id": "A062",
+                    "name": "Anaconda Campbelltown"
+                  },
+                  {
+                    "id": "A068",
+                    "name": "Anaconda Coffs Harbour"
+                  }
+                ]
+              },
+              {
+                "code": "NT",
+                "name": "Northern Territory",
+                "stores": [
+                  {
+                    "id": "A043",
+                    "name": "Anaconda Darwin"
+                  }
+                ]
+              },
+              {
+                "code": "QLD",
+                "name": "Queensland",
+                "stores": [
+                  {
+                    "id": "A002",
+                    "name": "Anaconda Ashmore"
+                  },
+                  {
+                    "id": "A004",
+                    "name": "Anaconda Everton Park"
+                  },
+                  {
+                    "id": "A005",
+                    "name": "Anaconda Townsville"
+                  },
+                  {
+                    "id": "A007",
+                    "name": "Anaconda Logan"
+                  },
+                  {
+                    "id": "A016",
+                    "name": "Anaconda Morayfield"
+                  },
+                  {
+                    "id": "A018",
+                    "name": "Anaconda Kawana Waters"
+                  },
+                  {
+                    "id": "A036",
+                    "name": "Anaconda West Burleigh"
+                  },
+                  {
+                    "id": "A037",
+                    "name": "Anaconda Cairns"
+                  },
+                  {
+                    "id": "A038",
+                    "name": "Anaconda Toowoomba"
+                  },
+                  {
+                    "id": "A046",
+                    "name": "Anaconda Rockhampton"
+                  },
+                  {
+                    "id": "A047",
+                    "name": "Anaconda North Lakes"
+                  },
+                  {
+                    "id": "A048",
+                    "name": "Anaconda Chermside"
+                  },
+                  {
+                    "id": "A049",
+                    "name": "Anaconda Tingalpa"
+                  },
+                  {
+                    "id": "A054",
+                    "name": "Anaconda Ipswich"
+                  },
+                  {
+                    "id": "A057",
+                    "name": "Anaconda Mackay"
+                  },
+                  {
+                    "id": "A063",
+                    "name": "Anaconda Maroochydore"
+                  },
+                  {
+                    "id": "A067",
+                    "name": "Anaconda Airlie Beach"
+                  },
+                  {
+                    "id": "A072",
+                    "name": "Anaconda Browns Plains"
+                  },
+                  {
+                    "id": "A076",
+                    "name": "Anaconda Smithfield"
+                  }
+                ]
+              },
+              {
+                "code": "SA",
+                "name": "South Australia",
+                "stores": [
+                  {
+                    "id": "A008",
+                    "name": "Anaconda Mile End"
+                  },
+                  {
+                    "id": "A032",
+                    "name": "Anaconda Modbury"
+                  },
+                  {
+                    "id": "A034",
+                    "name": "Anaconda Noarlunga"
+                  },
+                  {
+                    "id": "A069",
+                    "name": "Anaconda Gepps Cross"
+                  },
+                  {
+                    "id": "A075",
+                    "name": "Anaconda Munno Parra"
+                  }
+                ]
+              },
+              {
+                "code": "TAS",
+                "name": "Tasmania",
+                "stores": [
+                  {
+                    "id": "A011",
+                    "name": "Anaconda Cambridge"
+                  },
+                  {
+                    "id": "A028",
+                    "name": "Anaconda Launceston"
+                  },
+                  {
+                    "id": "A060",
+                    "name": "Anaconda Devonport"
+                  },
+                  {
+                    "id": "A080",
+                    "name": "Anaconda Glenorchy"
+                  }
+                ]
+              },
+              {
+                "code": "VIC",
+                "name": "Victoria",
+                "stores": [
+                  {
+                    "id": "A001",
+                    "name": "Anaconda Bayswater"
+                  },
+                  {
+                    "id": "A009",
+                    "name": "Anaconda Geelong"
+                  },
+                  {
+                    "id": "A013",
+                    "name": "Anaconda Frankston"
+                  },
+                  {
+                    "id": "A017",
+                    "name": "Anaconda Narre Warren"
+                  },
+                  {
+                    "id": "A020",
+                    "name": "Anaconda Preston"
+                  },
+                  {
+                    "id": "A021",
+                    "name": "Anaconda Bendigo"
+                  },
+                  {
+                    "id": "A026",
+                    "name": "Anaconda Springvale"
+                  },
+                  {
+                    "id": "A030",
+                    "name": "Anaconda Hoppers Crossing"
+                  },
+                  {
+                    "id": "A035",
+                    "name": "Anaconda Ballarat"
+                  },
+                  {
+                    "id": "A039",
+                    "name": "Anaconda Highett"
+                  },
+                  {
+                    "id": "A040",
+                    "name": "Anaconda Watergardens"
+                  },
+                  {
+                    "id": "A041",
+                    "name": "Anaconda Box Hill"
+                  },
+                  {
+                    "id": "A042",
+                    "name": "Anaconda Maribyrnong"
+                  },
+                  {
+                    "id": "A050",
+                    "name": "Anaconda Albury"
+                  },
+                  {
+                    "id": "A052",
+                    "name": "Anaconda Epping"
+                  },
+                  {
+                    "id": "A055",
+                    "name": "Anaconda Shepparton"
+                  },
+                  {
+                    "id": "A058",
+                    "name": "Anaconda Hawthorn East"
+                  },
+                  {
+                    "id": "A074",
+                    "name": "Anaconda Mildura"
+                  }
+                ]
+              },
+              {
+                "code": "WA",
+                "name": "Western Australia",
+                "stores": [
+                  {
+                    "id": "A003",
+                    "name": "Anaconda Joondalup"
+                  },
+                  {
+                    "id": "A010",
+                    "name": "Anaconda Innaloo"
+                  },
+                  {
+                    "id": "A022",
+                    "name": "Anaconda Cannington"
+                  },
+                  {
+                    "id": "A053",
+                    "name": "Anaconda Midland"
+                  },
+                  {
+                    "id": "A065",
+                    "name": "Anaconda Rockingham"
+                  },
+                  {
+                    "id": "A066",
+                    "name": "Anaconda Butler"
+                  },
+                  {
+                    "id": "A070",
+                    "name": "Anaconda Melville"
+                  },
+                  {
+                    "id": "A071",
+                    "name": "Anaconda Bunbury"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "MD",
+            "name": "Mountain Designs",
+            "isDefault": false,
+            "states": []
+          },
+          {
+            "code": "HS",
+            "name": "Harris Scarfe",
+            "isDefault": false,
+            "states": [
+              {
+                "code": "ACT",
+                "name": "Australian Capital Territory",
+                "stores": [
+                  {
+                    "id": "6059",
+                    "name": "Belconnen"
+                  },
+                  {
+                    "id": "6063",
+                    "name": "Fyshwick"
+                  },
+                  {
+                    "id": "6065",
+                    "name": "Tuggeranong"
+                  }
+                ]
+              },
+              {
+                "code": "NSW",
+                "name": "New South Wales",
+                "stores": [
+                  {
+                    "id": "5053",
+                    "name": "Shellharbour"
+                  },
+                  {
+                    "id": "5058",
+                    "name": "Bennetts Green"
+                  },
+                  {
+                    "id": "5089",
+                    "name": "Rockdale"
+                  },
+                  {
+                    "id": "6068",
+                    "name": "Wagga Wagga"
+                  },
+                  {
+                    "id": "6075",
+                    "name": "Merimbula"
+                  },
+                  {
+                    "id": "6076",
+                    "name": "Moruya"
+                  },
+                  {
+                    "id": "6078",
+                    "name": "Ulladulla"
+                  }
+                ]
+              },
+              {
+                "code": "QLD",
+                "name": "Queensland",
+                "stores": [
+                  {
+                    "id": "9090",
+                    "name": "Maroochydore"
+                  },
+                  {
+                    "id": "9095",
+                    "name": "Chermside"
+                  },
+                  {
+                    "id": "9098",
+                    "name": "Carindale"
+                  }
+                ]
+              },
+              {
+                "code": "SA",
+                "name": "South Australia",
+                "stores": [
+                  {
+                    "id": "1004",
+                    "name": "Arndale"
+                  },
+                  {
+                    "id": "1005",
+                    "name": "Elizabeth"
+                  },
+                  {
+                    "id": "1006",
+                    "name": "West Lakes"
+                  },
+                  {
+                    "id": "1008",
+                    "name": "Tea Tree Plaza"
+                  },
+                  {
+                    "id": "1010",
+                    "name": "Whyalla"
+                  },
+                  {
+                    "id": "1011",
+                    "name": "Marion"
+                  },
+                  {
+                    "id": "1012",
+                    "name": "Colonnades"
+                  },
+                  {
+                    "id": "1013",
+                    "name": "Gepps Cross"
+                  }
+                ]
+              },
+              {
+                "code": "TAS",
+                "name": "Tasmania",
+                "stores": [
+                  {
+                    "id": "4041",
+                    "name": "Moonah"
+                  },
+                  {
+                    "id": "4043",
+                    "name": "Launceston"
+                  },
+                  {
+                    "id": "4044",
+                    "name": "Devonport"
+                  },
+                  {
+                    "id": "4045",
+                    "name": "Ulverstone"
+                  }
+                ]
+              },
+              {
+                "code": "VIC",
+                "name": "Victoria",
+                "stores": [
+                  {
+                    "id": "2014",
+                    "name": "Mornington"
+                  },
+                  {
+                    "id": "2016",
+                    "name": "Spencer Outlet"
+                  },
+                  {
+                    "id": "2017",
+                    "name": "Woodgrove"
+                  },
+                  {
+                    "id": "2019",
+                    "name": "Ballarat"
+                  },
+                  {
+                    "id": "2020",
+                    "name": "Forest Hill"
+                  },
+                  {
+                    "id": "2021",
+                    "name": "Geelong"
+                  },
+                  {
+                    "id": "2022",
+                    "name": "Knox"
+                  },
+                  {
+                    "id": "2023",
+                    "name": "Epping"
+                  },
+                  {
+                    "id": "2024",
+                    "name": "Highpoint"
+                  },
+                  {
+                    "id": "2025",
+                    "name": "Southland"
+                  },
+                  {
+                    "id": "2026",
+                    "name": "Shepparton"
+                  },
+                  {
+                    "id": "2027",
+                    "name": "Airport West"
+                  },
+                  {
+                    "id": "2028",
+                    "name": "Cranbourne Park"
+                  },
+                  {
+                    "id": "2029",
+                    "name": "Waurn Ponds"
+                  },
+                  {
+                    "id": "2030",
+                    "name": "Warrnambool"
+                  },
+                  {
+                    "id": "2031",
+                    "name": "Sunbury"
+                  },
+                  {
+                    "id": "2032",
+                    "name": "Traralgon"
+                  },
+                  {
+                    "id": "2033",
+                    "name": "Eastland"
+                  },
+                  {
+                    "id": "2039",
+                    "name": "Fountain Gate"
+                  },
+                  {
+                    "id": "2040",
+                    "name": "Preston"
+                  },
+                  {
+                    "id": "2042",
+                    "name": "Carnegie"
+                  },
+                  {
+                    "id": "2045",
+                    "name": "Frankston"
+                  },
+                  {
+                    "id": "2048",
+                    "name": "Tarneit"
+                  },
+                  {
+                    "id": "2056",
+                    "name": "South Morang"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "KO",
+            "name": "KOO",
+            "isDefault": false,
+            "states": []
+          }
+        ]
+      },
+      {
+        "code": "NZ",
+        "name": "New Zealand",
+        "isDefault": false,
+        "brand": [
+          {
+            "code": "SP",
+            "name": "Spotlight",
+            "isDefault": true,
+            "states": [
+              {
+                "code": "NZ",
+                "name": "New Zealand",
+                "stores": [
+                  {
+                    "id": "S064",
+                    "name": "Spotlight Wairau Park"
+                  },
+                  {
+                    "id": "S067",
+                    "name": "Spotlight Wellington"
+                  },
+                  {
+                    "id": "S071",
+                    "name": "Spotlight Christchurch"
+                  },
+                  {
+                    "id": "S075",
+                    "name": "Spotlight New Plymouth"
+                  },
+                  {
+                    "id": "S076",
+                    "name": "Spotlight Hamilton"
+                  },
+                  {
+                    "id": "S083",
+                    "name": "Spotlight Hastings"
+                  },
+                  {
+                    "id": "S085",
+                    "name": "Spotlight Palmerston North"
+                  },
+                  {
+                    "id": "S086",
+                    "name": "Spotlight Rotorua"
+                  },
+                  {
+                    "id": "S087",
+                    "name": "Spotlight Kapati"
+                  },
+                  {
+                    "id": "S091",
+                    "name": "Spotlight Dunedin"
+                  },
+                  {
+                    "id": "S093",
+                    "name": "Spotlight Henderson"
+                  },
+                  {
+                    "id": "S095",
+                    "name": "Spotlight Whangarei"
+                  },
+                  {
+                    "id": "S101",
+                    "name": "Spotlight Nelson"
+                  },
+                  {
+                    "id": "S103",
+                    "name": "Spotlight Invercargill"
+                  },
+                  {
+                    "id": "S126",
+                    "name": "Spotlight Tauranga"
+                  },
+                  {
+                    "id": "S128",
+                    "name": "Spotlight Mt Wellington"
+                  },
+                  {
+                    "id": "S130",
+                    "name": "Spotlight North Harbour Albany"
+                  },
+                  {
+                    "id": "S133",
+                    "name": "Spotlight Manukau"
+                  },
+                  {
+                    "id": "S155",
+                    "name": "Spotlight Queenstown"
+                  },
+                  {
+                    "id": "S157",
+                    "name": "Spotlight Pukekohe"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "SG",
+        "name": "Singapore",
+        "isDefault": false,
+        "brand": [
+          {
+            "code": "SP",
+            "name": "Spotlight",
+            "isDefault": true,
+            "states": [
+              {
+                "code": "SG",
+                "name": "Singapore",
+                "stores": [
+                  {
+                    "id": "S059",
+                    "name": "Spotlight Plaza Singapura"
+                  },
+                  {
+                    "id": "S156",
+                    "name": "Spotlight Westgate"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "MY",
+        "name": "Malaysia",
+        "isDefault": false,
+        "brand": [
+          {
+            "code": "SP",
+            "name": "Spotlight",
+            "isDefault": true,
+            "states": [
+              {
+                "code": "MLY",
+                "name": "Malaysia",
+                "stores": [
+                  {
+                    "id": "S142",
+                    "name": "Spotlight IPC"
+                  },
+                  {
+                    "id": "S144",
+                    "name": "Spotlight My Town"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "configMap": {
+      "CONFIG": [
+        {
+          "code": "FINANCIALYEAR",
+          "value": "2040",
+          "order": 1,
+          "isDefault": false,
+          "fieldType": "CONFIG",
+          "configType": "USER"
+        },
+        {
+          "code": "TOLERANCEDAYS",
+          "value": "7",
+          "order": 1,
+          "isDefault": false,
+          "fieldType": "CONFIG",
+          "configType": "USER"
+        },
+        {
+          "code": "EXTENDABLEDAYS",
+          "value": "14",
+          "order": 1,
+          "isDefault": false,
+          "fieldType": "CONFIG",
+          "configType": "USER"
+        }
+      ],
+      "ADVERTISING_CHANNEL": [
+        {
+          "code": "EM",
+          "value": "Email",
+          "order": 1,
+          "isDefault": true,
+          "fieldType": "ADVERTISING_CHANNEL",
+          "configType": "USER"
+        },
+        {
+          "code": "DM",
+          "value": "Direct Mail",
+          "order": 2,
+          "isDefault": false,
+          "fieldType": "ADVERTISING_CHANNEL",
+          "configType": "USER"
+        },
+        {
+          "code": "TM",
+          "value": "Text Message",
+          "order": 3,
+          "isDefault": false,
+          "fieldType": "ADVERTISING_CHANNEL",
+          "configType": "USER"
+        },
+        {
+          "code": "CT",
+          "value": "Catalogue",
+          "order": 4,
+          "isDefault": false,
+          "fieldType": "ADVERTISING_CHANNEL",
+          "configType": "USER"
+        },
+        {
+          "code": "FL",
+          "value": "Instore Flyer",
+          "order": 5,
+          "isDefault": false,
+          "fieldType": "ADVERTISING_CHANNEL",
+          "configType": "USER"
+        },
+        {
+          "code": "PA",
+          "value": "Press Ad",
+          "order": 6,
+          "isDefault": false,
+          "fieldType": "ADVERTISING_CHANNEL",
+          "configType": "USER"
+        },
+        {
+          "code": "MG",
+          "value": "Magazine",
+          "order": 7,
+          "isDefault": false,
+          "fieldType": "ADVERTISING_CHANNEL",
+          "configType": "USER"
+        },
+        {
+          "code": "SO",
+          "value": "Social",
+          "order": 8,
+          "isDefault": false,
+          "fieldType": "ADVERTISING_CHANNEL",
+          "configType": "USER"
+        },
+        {
+          "code": "WB",
+          "value": "Website",
+          "order": 9,
+          "isDefault": false,
+          "fieldType": "ADVERTISING_CHANNEL",
+          "configType": "USER"
+        },
+        {
+          "code": "AF",
+          "value": "Affiliate",
+          "order": 10,
+          "isDefault": false,
+          "fieldType": "ADVERTISING_CHANNEL",
+          "configType": "USER"
+        },
+        {
+          "code": "TP",
+          "value": "3rd Party",
+          "order": 11,
+          "isDefault": false,
+          "fieldType": "ADVERTISING_CHANNEL",
+          "configType": "USER"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,430 @@
+<div class="successMessage"> Promotion ID:<strong> {{ promoId }}</strong></div>
+<div class="downBtn" id="download">
+    <img id="photo" />
+    <a id="link1" download="{{financialyear}}_{{evtCode}}_{{advchannel}}_{{couponDescriptionValue}}">
+        <button mat-flat-button color="primary" class="applyButton">Download</button>
+    </a>
+</div>
+<ngx-spinner bdColor="rgba(51,51,51,0.8)"
+                  size="large"
+                  color="#022452"
+                  type="ball-scale-multiple"></ngx-spinner>
+                  <mat-card>
+                    <form #updatePromotionForm="ngForm" id="updatePromotionForm" (ngSubmit)="updatePromotionForm.form.valid && updatePromotion()">
+                      <div class="col-md-12 row promotionPage">
+                          <mat-card-title><h5>{{ createNewHeader }}</h5></mat-card-title>
+                          <div class="col-md-12 row promotypeSection">
+                              <div class="col-md-4">
+                                  <mat-form-field appearance="fill">
+                                      <mat-label>
+                                          <span>Promotion Type <span class="validationStar">*</span></span>
+                                          <span class="material-icons question">help</span>
+                                      </mat-label>
+                                      <mat-select class="ptype" [(ngModel)]="promoTypeDrp" [ngModelOptions]="{standalone: true}" (selectionChange)="onChangePromoType($event)" [disabled]="ifNotified || updateDisable">
+                                          <mat-option *ngFor='let promoType of getPromoTypeValue' [value]="promoType" >{{ promoType }}</mat-option>
+                                      </mat-select>
+                                  </mat-form-field>
+                              </div>
+                              <div class="col-md-4">
+                                  
+                              </div>
+                              <div class="col-md-4">
+                                  <mat-form-field appearance="fill">
+                                      <mat-label>
+                                          <span>Promotion Status <span class="validationStar">*</span></span>
+                                          <span class="material-icons question">help</span>
+                                      </mat-label>
+                                      <mat-select [(ngModel)]="statusDrp" [ngModelOptions]="{standalone: true}" (selectionChange)="onChangePromoStatus($event)" disabled>
+                                          <mat-option *ngFor='let status of getPromoStatusValues' [value]="status">{{ status }}</mat-option>
+                                      </mat-select>
+                                  </mat-form-field>
+                              </div>
+                          </div>
+                          <div class="col-md-12 row promotionDetails promo-details-align">
+                                  <h6>Promotion Details</h6>
+                                          <div class="col-md-3" *ngIf="fromEvent">
+                                  <mat-form-field class="example-full-width" appearance="fill">
+                                      <mat-label>
+                                          <span>Event Code</span>
+                                      </mat-label>
+                                      <input matInput class="text" placeholder="Event Code" [(ngModel)] ="eventCode" [ngModelOptions]="{standalone: true}" [disabled]="ifFromEvent">
+                                  </mat-form-field>
+                              </div>
+                              <div class="col-md-3" *ngIf="fromEvent">
+                                  <mat-form-field class="example-full-width" appearance="fill">
+                                      <mat-label>
+                                          <span>Event Name</span>
+                                      </mat-label>
+                                      <input matInput placeholder="Event Name" [(ngModel)] ="eventName" [ngModelOptions]="{standalone: true}" [disabled]="ifFromEvent">
+                                  </mat-form-field>
+                              </div>
+                              
+                              <div class="col-md-12 row">
+                                   <div class="col-md-3">
+                                      <div class="col-md-12">
+                                          <mat-form-field appearance="fill">
+                                              <mat-label>
+                                                  <span>Country <span class="validationStar">*</span></span>
+                                              </mat-label>
+                                              <mat-select [(ngModel)]="countryDrp" [ngModelOptions]="{standalone: true}" (selectionChange)="onChangeCountry($event)" disabled>
+                                                  <mat-option *ngFor='let country of getCountryValues' [value]="country">{{ country.name }} </mat-option>
+                                              </mat-select>
+                                          </mat-form-field>
+                                      </div>
+                                      <div class="col-md-12">
+                                          <mat-form-field appearance="fill">
+                                              <mat-label>
+                                                  <span>Redeemable By <span class="validationStar">*</span></span>
+                                              </mat-label>
+                                              <mat-select [(ngModel)]="redeemedBy" [ngModelOptions]="{standalone: true}" (selectionChange)="onChangeRedeemedBy($event)" [disabled]="redeem || ifActive">
+                                                  <mat-option *ngFor='let redeemedby of getRedeemedByValues' [value]="redeemedby">{{ redeemedby }}</mat-option>
+                                              </mat-select>
+                                          </mat-form-field>
+                                      </div>   
+                                      <div class="col-md-12">
+                                          <mat-form-field appearance="fill">
+                                              <mat-label>                            
+                                                  <span>Financial Year <span class="validationStar">*</span></span>
+                                              </mat-label>
+                                              <mat-select [(ngModel)]="financialyear" [ngModelOptions]="{standalone: true}" [disabled]="ifNotified" (selectionChange)="onChangeFinanceYear($event)">
+                                                  <mat-option *ngFor='let finyear of financialyearValues1' [value]="finyear">{{ finyear }}</mat-option>
+                                              </mat-select>
+                                          </mat-form-field>
+                                      </div>
+                                   </div>
+                                   <div class="col-md-6">
+                                       <div class="col-md-12 row">
+                                           <div class="col-md-6">
+                                              <mat-form-field appearance="fill">
+                                                  <mat-label>
+                                                      <span>Brand <span class="validationStar">*</span></span>
+                                                  </mat-label>
+                                                  <mat-select [(ngModel)]="brandDrp" [ngModelOptions]="{standalone: true}" (selectionChange)="onChangeBrand($event)" disabled>
+                                                      <mat-option *ngFor='let brand of getBrandValues' [value]="brand">{{ brand.name }} </mat-option>
+                                                  </mat-select>
+                                              </mat-form-field>
+                                           </div>
+                                      <div class="col-md-6">
+                                          <mat-form-field class="example-full-width" appearance="fill">
+                                              <mat-label>
+                                                  <span>Promotion Overview</span>
+                                              </mat-label>
+                                              <input matInput placeholder="Promotion Overview" [(ngModel)] ="promoOverview"  [ngModelOptions]="{standalone: true}" required [disabled]="ifActive" maxlength="200">
+                                                  <!-- <mat-error *ngIf="hasError('promotionOverview', 'required')">Promotion overview cannot be empty</mat-error>
+                                                  <mat-error *ngIf="hasError('promotionOverview', 'pattern')">Allowed only characters</mat-error> 
+                                                  pattern="[a-zA-Z0-9 ]{1,200}$"-->
+                                          </mat-form-field>
+                                      </div>
+                                      </div>
+                                      <div class="col-md-12 row">
+                                          <div class="col-md-6">
+                                              <mat-form-field appearance="fill" *ngIf="!fromEvent">
+                                                  <mat-label>
+                                                      <span>Start Date <span class="validationStar">*</span></span>
+                                                  </mat-label>
+                                                  <input matInput [matDatepicker]="picker" [(ngModel)]="startdate"  [ngModelOptions]="{standalone: true}" [min]="financeYearStartDate" [max]="financeYearEndDate" [disabled]="ifFromEvent || ifNotified" (dateChange)="minDateChange()">
+                                                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                                  <mat-datepicker #picker></mat-datepicker>
+                                              </mat-form-field>
+                                              <mat-form-field appearance="fill" *ngIf="fromEvent">
+                                                <mat-label>
+                                                    <span>Start Date <span class="validationStar">*</span></span>
+                                                </mat-label>
+                                                <input matInput [matDatepicker]="picker" [(ngModel)] ="startdate" [ngModelOptions]="{standalone: true}" [min]="eventStartDateFromEvent"  [max]="eventEndDateFromEvent">
+                                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                                <mat-datepicker #picker></mat-datepicker>
+                                            </mat-form-field>
+                                          </div>
+                                          <div class="col-md-6">
+                                              <mat-form-field appearance="fill" *ngIf="!fromEvent">
+                                                  <mat-label>
+                                                      <span>End Date</span>
+                                                  </mat-label>
+                                                  <input matInput [matDatepicker]="picker1" [(ngModel)]="enddate" [ngModelOptions]="{standalone: true}" [min]="financeYearStartDate" [disabled]="ifFromEvent || ifNotified" [required] ="promoTypeDrp == 'Generic'">
+                                                  <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                                  <mat-datepicker [startAt]= "enddates" #picker1></mat-datepicker>
+                                              </mat-form-field>
+                                              <mat-form-field appearance="fill" *ngIf="fromEvent">
+                                                <mat-label>
+                                                    <span>End Date</span>
+                                                </mat-label>
+                                                <input matInput [matDatepicker]="picker1" [(ngModel)] ="enddate" [ngModelOptions]="{standalone: true}" [min]="eventStartDateFromEvent" [max]="eventEndDateFromEvent" [required] ="promoTypeDrp == 'Generic'">
+                                                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                                <mat-datepicker [startAt]= "enddates" #picker1></mat-datepicker>
+                                            </mat-form-field>
+                                          </div>
+                                          <div class="col-md-6" *ngIf="promoTypeDrp != 'Generic'">
+                                              <mat-form-field class="example-full-width" appearance="fill">
+                                                  <mat-label>
+                                                      <span>Extendable Days</span>
+                                                  </mat-label>
+                                                  <input matInput placeholder="Extendable Days" [(ngModel)] ="extendableDays" [ngModelOptions]="{standalone: true}" [disabled]="ifFromEvent || ifActive" *ngIf="ifFromEvent">
+                                                  <mat-select [(value)]="extendableDays" *ngIf="!ifFromEvent"  [disabled]="extactive" (selectionChange)="onExtend($event)" >
+                                                      <mat-option *ngFor='let extentDays of getExtendibleValues' [value]="extentDays">{{ extentDays }}</mat-option>
+                                                  </mat-select>
+                                              </mat-form-field>
+                                          </div>
+                                          <div class="col-md-6">
+                                              <mat-form-field class="example-full-width" appearance="fill">
+                                                  <mat-label>
+                                                      <span>Tolerance Days <span class="validationStar">*</span></span>
+                                                  </mat-label>
+                                                  <input matInput placeholder="Tolerance Days" [(ngModel)] ="toleranceDays" [ngModelOptions]="{standalone: true}" [disabled]="ifActive || ifFromEvent" *ngIf="ifFromEvent">
+                                                  <mat-select [(value)]="toleranceDays" *ngIf="!ifFromEvent"  [disabled]="tolactive" (selectionChange)="onTolerance($event)">
+                                                      <mat-option *ngFor='let tolerantDays of getToleranceValues' [value]="tolerantDays"> {{ tolerantDays }} </mat-option>
+                                                  </mat-select>
+                                              </mat-form-field>
+                                              <div class="discount-percent-error" *ngIf="toleranceMessage"> Tolerance days cannot be greater than or equal to Extendable days </div>
+                                          </div>
+                                      </div>
+                                   </div>
+                                   
+                                   <div class="col-md-3">
+                                      <div class="col-md-12">
+                                          <mat-form-field appearance="fill">
+                                              <mat-label>
+                                                  <span>Advertising Channel <span class="validationStar">*</span></span>
+                                              </mat-label>
+                                              <mat-select [(value)]="adChannelDrp" (selectionChange)="onChangeAdChannel($event)" [disabled]="ifActive">
+                                                  <mat-option *ngFor='let adchannel of getAdvertisingChannelValues' [value]="adchannel">{{ adchannel }}</mat-option>
+                                              </mat-select>
+                                          </mat-form-field>
+                                      </div>
+                                      <div class="col-md-12">
+                                          <mat-form-field appearance="fill">
+                                              <mat-label>
+                                                  <span>Sales Channel <span class="validationStar">*</span></span>
+                                              </mat-label>
+                                              <mat-select [(ngModel)]="channelDrp" [ngModelOptions]="{standalone: true}" (selectionChange)="onChangeChannel($event)" [disabled]="ifNotified">
+                                                  <mat-option *ngFor='let channel of getSalesChannelValues' [value]="channel">{{ channel }}</mat-option>
+                                              </mat-select>
+                                          </mat-form-field>
+                                      </div>
+                                      <div class="col-md-12" *ngIf="selectOnline">
+                                          <mat-form-field class="example-full-width" appearance="fill">
+                                              <mat-label>
+                                                  <span>Online Promo Code</span>
+                                              </mat-label>
+                                              <input matInput placeholder="Online Promo Code" [(ngModel)]="onlinePromoCode" [ngModelOptions]="{standalone: true}" required="promotionType == 'Generic' && channelDrp != 'Instore'" [disabled]="ifNotified">
+                                                  <!-- <mat-error *ngIf="hasError('onlinePromoCode', 'required')">Sales code cannot be empty</mat-error>
+                                                  <mat-error *ngIf="hasError('onlinePromoCode', 'pattern')">Allowed only alpha numeric</mat-error> -->
+                                          </mat-form-field>
+                                      </div>
+                                   </div>
+                              </div>
+                          </div>
+                          <div class="col-md-12 row offerDetails">
+                                  <h6>Offer Details</h6>
+                          <div class="col-md-3">
+                              <mat-form-field appearance="fill">
+                                  <mat-label>
+                                      <span>Discount Type <span class="validationStar">*</span></span>
+                                  </mat-label>
+                                  <mat-select [(ngModel)]="discountType" [ngModelOptions]="{standalone: true}" *ngIf="!ifFromEvent" (selectionChange)="onDiscountType($event)" [disabled]="ifNotified">
+                                      <mat-option *ngFor='let discount of getDiscountTypeValues' [value]="discount">{{ discount }}</mat-option>
+                                  </mat-select>
+                              </mat-form-field>
+                          </div>
+                          <div class="col-md-3" >
+                              <mat-form-field appearance="fill" *ngIf="percentOff">
+                                  <mat-label>
+                                      <span>Discount Amount</span>
+                                  </mat-label>
+                                  <input matInput placeholder="Discount Amount" [(ngModel)] ="discountAmount" [ngModelOptions]="{standalone: true}" pattern="^(?=.*[1-9])\d{1,9}(?:\.\d\d?)?$" required [disabled]="ifNotified">
+                                  <!-- pattern="^(?=.*[1-9])\d{1,9}(?:\.\d\d?)?$" -->
+                              </mat-form-field>
+                              <mat-form-field appearance="fill" *ngIf="!percentOff">
+                                  <mat-label>
+                                      <span>Discount Percentage </span>
+                                  </mat-label>
+                                  <input matInput placeholder="Discount Percentage"  [(ngModel)] ="discountAmount" [ngModelOptions]="{standalone: true}"  required pattern="^(?=.*[1-9])\d{1,9}(?:\.\d\d?)?$" [disabled]="ifNotified">
+                                  <!-- pattern="^(?=.*[1-9])\d{1,3}(?:\.\d\d?)?$" -->
+                              </mat-form-field>
+                              <div class="discount-percent-error" *ngIf="discountAmount > 100 && !percentOff">Discount Percentage should be within 100</div>
+                          </div>
+                          <div class="col-md-3">
+                              <mat-form-field class="example-full-width" appearance="fill">
+                                  <mat-label>
+                                    <span *ngIf="dollarOff">Minimum Spend ($)</span>
+                                    <span *ngIf="percentageOff">Minimum Spend ($)</span>
+                                  </mat-label>
+                                  <input matInput placeholder="Minimum spend on transaction" [(ngModel)] ="minimumSpend" [ngModelOptions]="{standalone: true}" [disabled]="ifNotified" [required] ="minSpend">
+                              </mat-form-field>
+                          </div>
+                          <div class="col-md-6">
+                              <mat-form-field class="example-full-width" appearance="fill">
+                                  <mat-label>
+                                      <span>Coupon Description</span>
+                                  </mat-label>
+                                  <textarea matInput placeholder="Please details about the Coupon" [(ngModel)] ="couponDescriptionValue" [ngModelOptions]="{standalone: true}" required [disabled]="ifNotified" maxlength="40"></textarea>
+                                  <!-- <mat-error *ngIf="hasError('couponDescription', 'required')">Coupon Description cannot be empty</mat-error>
+                                  <mat-error *ngIf="hasError('couponDescription', 'minlength')">Min 15 characters</mat-error>
+                                  <mat-error *ngIf="hasError('couponDescription', 'maxlength')">Max 20 characters</mat-error> 
+                                  pattern="[a-zA-Z0-9 ]{1,40}$"-->
+                              </mat-form-field>
+                          </div>
+                          <div class="col-md-3">
+                              <mat-form-field class="example-full-width" appearance="fill">
+                                  <mat-label>
+                                      <span>Receipt Description</span>
+                                  </mat-label>
+                                  <textarea matInput placeholder="Please enter receipt description" [(ngModel)] ="receiptDescriptionValue" [ngModelOptions]="{standalone: true}" required [disabled]="ifNotified" maxlength="40"></textarea>
+                                  <!-- <mat-error *ngIf="hasError('receiptDescription', 'required')">Coupon Description cannot be empty</mat-error>
+                                  <mat-error *ngIf="hasError('receiptDescription', 'minlength')">Min 15 characters</mat-error>
+                                  <mat-error *ngIf="hasError('receiptDescription', 'maxlength')">Max 20 characters</mat-error> 
+                                  pattern="[a-zA-Z0-9 ]{1,40}$"-->
+                              </mat-form-field>
+                          </div>
+                          <div class="col-md-6">
+                              <mat-form-field class="example-full-width" appearance="fill">
+                                  <mat-label>
+                                      <span>Terms and conditions</span>
+                                  </mat-label>
+                                  <textarea matInput placeholder="Please read terms and conditions" [(ngModel)] ="termsAndConditionsValue" [ngModelOptions]="{standalone: true}" required [disabled]="ifActive"></textarea>
+                                  <!-- <mat-error *ngIf="hasError('termsAndConditions', 'required')">Coupon Description cannot be empty</mat-error>
+                                  <mat-error *ngIf="hasError('termsAndConditions', 'minlength')">Min 15 characters</mat-error>
+                                  <mat-error *ngIf="hasError('termsAndConditions', 'maxlength')">Max 20 characters</mat-error> 
+                                  pattern="[a-zA-Z0-9 ]*"-->
+                              </mat-form-field>
+                          </div>
+                         </div>       
+                      </div>
+                      <div class="col-md-12 row" *ngIf="artiIds">
+                        <div class="col-md-6 promoRegion">
+                            <h6 class="articleId-heading">List of Included Article Id's</h6>
+                            <mat-form-field class="example-full-width" appearance="fill" *ngIf="fromEvent || !fromEvent">
+                                <textarea matInput placeholder="Included Article IDs" class="txtArticle articleContent" rows="10" cols="100" [(ngModel)] ="articleIds" (input)="checkArticle()" (keydown.enter)="lineCount >= maxNumLines ? [$event.preventDefault(), showMessage()] : ''" [ngModelOptions]="{standalone: true}"  [disabled]="artDisable"></textarea>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-6 promoRegion">
+                            <h6 class="articleId-heading">List of Excluded Article Id's</h6>
+                            <mat-form-field class="example-full-width" appearance="fill" *ngIf="fromEvent || !fromEvent">
+                                <textarea matInput placeholder="Excluded Article IDs" class="txtArticle articleContent" rows="10" cols="100" [(ngModel)] ="excludeArticleIds" (input)="checkExcludedArticle()" (keydown.enter)="lineCountExcluded >= maxNumLines ? [$event.preventDefault(), showMessage()] : ''" [ngModelOptions]="{standalone: true}" [disabled]="artDisable"></textarea>
+                            </mat-form-field>
+                        </div>
+                      </div>
+                      <span *ngIf="articleErrorMessage || articleExcludedMessage" class="article-error-message">You have reached maximum limit for article Ids</span>
+                      <div class="col-md-12 row">
+                          <div class="col-md-6 promoRegion" *ngIf="selectRegionPOS">
+                              <h6>Stores included in Sales Locations</h6>
+                              <div class="row">           
+                                      <div class="col-md-12 locations">
+                                          <mat-accordion #accordion="matAccordion">
+                                              <div class="selectAll">
+                                                  <mat-checkbox [(ngModel)]="allStates" [ngModelOptions]="{standalone: true}" (click)="$event.stopPropagation();" (change)="selectAllStates(allStates, getStatesValues)" [disabled]="ifNotified">All States</mat-checkbox>
+                                              </div>
+                                              <ng-container >
+                                                  <mat-expansion-panel (opened)="panelOpenState = true"
+                                                                      (closed)="panelOpenState = false" *ngFor='let statesone of getStatesValues'>
+                                                  <mat-expansion-panel-header>
+                                                      <mat-panel-title>
+                                                      <mat-checkbox [(ngModel)]="statesone.checked" [ngModelOptions]="{standalone: true}" (click)="$event.stopPropagation();" (change)="selectAllStores($event, statesone, getStatesValues)" [disabled]="ifNotified">{{statesone.name}}</mat-checkbox>
+                                                      </mat-panel-title>
+                                                      <mat-panel-description>
+                                                      
+                                                      </mat-panel-description>
+                                                  </mat-expansion-panel-header>
+                                                      <div *ngFor="let store of statesone.stores">
+                                                          <mat-checkbox [(ngModel)]="store.checked" [ngModelOptions]="{standalone: true}" (click)="$event.stopPropagation();" (change)="selectStores($event, store, getStatesValues)" [disabled]="ifNotified" > {{store.id}} - {{ store.name}} </mat-checkbox>
+                                                      </div>
+                                                  </mat-expansion-panel>
+                                              </ng-container>
+                                          </mat-accordion>
+                                      </div>
+                              
+                                      <div class="col-md-12">
+                                          <h6>
+                                              <mat-form-field class="example-full-width" appearance="fill">
+                                                  <mat-label>
+                                                      <span>POS Promotion ID</span>
+                                                  </mat-label>
+                                                  <input matInput placeholder="POS Promo Code" [(ngModel)] ="posPromoCodeValue" [ngModelOptions]="{standalone: true}" [required]="ifNotified"  [disabled]="ifActive">
+                                                  <!-- <mat-hint align="end">Promotion ID is required to activate promotion</mat-hint>
+                                                  <mat-error *ngIf="hasError('posPromoCode', 'required')">POS promotion ID is required</mat-error>
+                                                  <mat-error *ngIf="hasError('posPromoCode', 'pattern')">Allowed only Alphanumeric and Max 10 characters</mat-error> -->
+                                              </mat-form-field>
+                                          </h6>
+                                      </div>
+                              </div>
+                          </div>
+                          <div class="col-md-6 adverRegion" *ngIf="selectRegionEcom">
+                              <h6>Advertising Location</h6>
+                              <div class="row">
+                                  
+                                  <div class="col-md-12 locations">              
+                                      <mat-accordion multi="true" #accordion1="matAccordion">
+                                          <div class="selectAll">
+                                              <mat-checkbox [(ngModel)]="allStatesLoc" [ngModelOptions]="{standalone: true}" (click)="$event.stopPropagation();" (change)="selectAllStatesL(allStatesLoc, getStatesValuesL)" [disabled]="ifNotified">All States</mat-checkbox>
+                                          </div>
+                                          <ng-container *ngFor='let statesloc of getStatesValuesL'>
+                                              <mat-expansion-panel (opened)="panelOpenState1 = true"
+                                                                  (closed)="panelOpenState1 = false" #panel1>
+                                              <mat-expansion-panel-header>
+                                                  <mat-panel-title>
+                                                  <mat-checkbox [(ngModel)]="statesloc.checked" [ngModelOptions]="{standalone: true}" (click)="$event.stopPropagation();" (change)="selectAllStoresL($event, statesloc, getStatesValuesL)" [disabled]="ifNotified">{{statesloc.name}}</mat-checkbox>
+                                                  </mat-panel-title>
+                                                  <mat-panel-description>
+                                                  </mat-panel-description>
+                                              </mat-expansion-panel-header>
+                                                  <div *ngFor="let storeloc of statesloc.stores">
+                                                      <mat-checkbox [(ngModel)]="storeloc.checked" [ngModelOptions]="{standalone: true}" (click)="$event.stopPropagation();"(change)="selectStoresL($event, storeloc, getStatesValuesL)" [disabled]="ifNotified">{{storeloc.id}} - {{ storeloc.name}}</mat-checkbox>
+                                                  </div>
+                                              </mat-expansion-panel>
+                                          </ng-container>    
+                                      </mat-accordion>        
+                                  </div>
+                              
+                                  <div class="col-md-12" *ngIf= "ecomProCode">
+                                      <h6>
+                                          <mat-form-field class="example-full-width" appearance="fill">
+                                              <mat-label>
+                                                  <span>ECOM Promotion ID</span>
+                                              </mat-label>
+                                              <input matInput placeholder="Ecom Promo Code" [(ngModel)]="ecomPromoCode" [ngModelOptions]="{standalone: true}" [required]="ifNotified"  [disabled]="ifActive">
+                                              <!-- <mat-hint align="end">Promotion ID is required to activate promotion</mat-hint>
+                                                  <mat-error *ngIf="hasError('ecomPromoCode', 'required')">ECOM promotion ID is required</mat-error>
+                                                  <mat-error *ngIf="hasError('ecomPromoCode', 'pattern')">Allowed only Alphanumeric and Max 10 characters</mat-error> -->
+                                          </mat-form-field>
+                                      </h6>
+                                  </div>
+                          </div>
+                  
+                          </div>
+                      </div>
+                      <div *ngIf="postpromoerror" style="color:red">
+                          {{ postpromoerrormessage }}
+                      </div>
+                      <div class="errorMessage" *ngIf="datemismatcherror">
+                        Start date is greater than the end date
+                     </div>
+                     <div class="successMessage" *ngIf="updatedSuccess">
+                         Promotion updated successfully
+                     </div>
+                     <div class="successMessage" *ngIf="emailnotify">
+                        Promotion Status updated to 'Ready to Notify'
+                     </div>
+                     <div class="successMessage" *ngIf="readytoactivateSuccess">
+                        Promotion Status updated to 'Ready to Activate'
+                    </div>
+                    <div class="successMessage" *ngIf="setActiveStatus">
+                        Promotion Status updated to 'Active'
+                    </div>
+                    <div class="successMessage" *ngIf="activateSuccess">
+                        Email Notification sent successfully
+                    </div>
+                     <div class="activChk">
+                        <mat-checkbox class="emailNoti" [(ngModel)]="emailNotification" [ngModelOptions]="{standalone: true}" (click)="$event.stopPropagation();" (change)="sendEmailNotification($event)" [disabled]="notificationChk">Re-send Notifications</mat-checkbox>
+                         <mat-checkbox [(ngModel)]="readyToNotifyPromo" [ngModelOptions]="{standalone: true}" (click)="$event.stopPropagation();" (change)="readyToNotify($event)"[disabled]="notify">Ready to Notify</mat-checkbox>
+                         <mat-checkbox [(ngModel)]="readyToactivatePromo" [ngModelOptions]="{standalone: true}" (click)="$event.stopPropagation();" (change)="readyToActivateChk($event)" [disabled]="readyToA">Ready to Activate</mat-checkbox> 
+                         <mat-checkbox [(ngModel)]="activatePromo" [ngModelOptions]="{standalone: true}" (click)="$event.stopPropagation();" (change)="activateChk($event)" [disabled]="activeChk">Activate the promotion</mat-checkbox>
+                     </div>
+                      <mat-card-actions>
+                          <!-- <button mat-flat-button color="primary" class="applyButton" (click)= "" [disabled]="sendEmailBtn">Send E-mail</button> -->
+                          <button mat-flat-button color="primary" class="applyButton" *ngIf="resendemail">Send Email</button>
+                          <button mat-flat-button color="primary" class="applyButton" [disabled]="updateDisabled">Update</button>
+                          <button mat-flat-button color="primary" class="applyButton" (click)="home()">Home</button>
+                          <button mat-flat-button color="primary" class="applyButton" routerLink="/createpromotion">Create New Promotion</button>
+                      </mat-card-actions>
+                  </form>
+                  </mat-card>
+                  

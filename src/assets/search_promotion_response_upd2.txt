@@ -1,0 +1,96 @@
+{
+  "responseType" : "SEARCH",
+  "promotions" : [ {
+    "promotionType" : "TYPE3",
+    "promotionId" : "12345",
+    "financialYear" : 2022,
+    "eventId" : "EVENT1",
+    "eventCode" : "E10",
+    "brand" : "SP",
+    "country" : "AU",
+    "articleId" : "ART106",
+    "discountType" : "PO",
+    "discountAmount" : 40.0,
+    "minimumSpend" : 100.0,
+    "receiptDescription" : "Promotion receipt Description 123",
+    "requireQrcode" : false,
+    "qrCodeColour" : "GREEN",
+    "promotionStatus" : "ACTIVE",
+    "promotionOverview" : "Promotion overview123",
+    "redeemableBy" : "AO",
+    "salesChannel" : "IO",
+    "advertisingChannel" : "EM",
+    "toleranceDays" : 3,
+    "extendableDays" : 6,
+    "promoCode" : "PROMON1234",
+    "couponDescription" : "Promotion coupon description 123",
+    "termsAndConditions" : "Promotion terms and condition 123",
+    "posPromotionId" : "POS1000",
+    "ecomPromotionId" : "ECOM1000",
+    "salesLocation" : [ {
+      "code" : "NSW",
+      "name" : "New South Wales",
+      "stores" : [ {
+        "id" : "S030",
+        "name" : "Spotlight Birkenhead Point"
+      } ],
+      "checked" : "true"
+    } ],
+    "advertisingLocation" : [ {
+      "code" : "NSW",
+      "name" : "New South Wales",
+      "stores" : [ {
+        "id" : "S030",
+        "name" : "Spotlight Birkenhead Point"
+      } ],
+      "checked" : "true"
+    } ]
+  }, {
+    "promotionType" : "TYPE3",
+    "promotionId" : "31924935",
+    "financialYear" : 2022,
+    "eventId" : "EVENT1",
+    "eventCode" : "E10",
+    "brand" : "SP",
+    "country" : "AU",
+    "articleId" : "ART111",
+    "discountType" : "PO",
+    "discountAmount" : 40.0,
+    "minimumSpend" : 100.0,
+    "receiptDescription" : "Promotion receipt Description 123",
+    "requireQrcode" : false,
+    "qrCodeColour" : "GREEN",
+    "promotionStatus" : "ACTIVE",
+    "promotionOverview" : "Promotion overview123",
+    "redeemableBy" : "AO",
+    "startDate" : "2022-06-27",
+    "endDate" : "2022-07-30",
+    "salesChannel" : "IO",
+    "advertisingChannel" : "EM",
+    "toleranceDays" : 3,
+    "extendableDays" : 6,
+    "promoCode" : "PROMON1234",
+    "couponDescription" : "Promo coupon description",
+    "termsAndConditions" : "Promo terms and condition",
+    "posPromotionId" : "POS1000",
+    "ecomPromotionId" : "ECOM1000",
+    "salesLocation" : [ {
+      "code" : "NSW",
+      "name" : "New South Wales",
+      "stores" : [ {
+        "id" : "1001",
+        "name" : "Spotlight xyz"
+      } ],
+      "checked" : "true"
+    } ],
+    "advertisingLocation" : [ {
+      "code" : "NSW",
+      "name" : "New South Wales",
+      "stores" : [ {
+        "id" : "1001",
+        "name" : "Spotlight xyz"
+      } ],
+      "checked" : "true"
+    } ]
+  } ]
+}

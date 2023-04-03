@@ -1,0 +1,37 @@
+::ng-deep {
+    .eventButtons {
+    margin-top:40px;
+    }
+
+    .demo-table {
+        width: 375%;
+        text-align: left;
+      }
+
+      .cdk-column-termsandconditions {
+        width: 5%;
+      }
+  
+      .cdk-column-termsandconditions div {
+        overflow-x: auto;
+        height: 21px;
+      }
+
+    .table-responsive {
+      max-height:506px;
+    }
+}
+
+.errorM {
+    display: inline-block;
+    margin-top: 20px;
+    color: red;
+}
+
+.successMessage {
+  text-align: center;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 20px;
+  color: green;
+}

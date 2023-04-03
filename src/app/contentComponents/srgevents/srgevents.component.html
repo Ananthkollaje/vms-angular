@@ -1,0 +1,128 @@
+<ngx-spinner bdColor="rgba(51,51,51,0.8)"
+size="large"
+color="#022452"
+type="ball-scale-multiple"></ngx-spinner>
+<mat-card>
+    <form #createEventForm="ngForm" id="createEventForm" (ngSubmit)="createEventForm.form.valid">
+    <div class="col-md-12 row promotionPage">
+        <mat-card-title><h5>Create An Event</h5></mat-card-title>
+            <div class="col-md-12 row promotypeSection">
+                <div class="col-md-3">
+                    <mat-form-field appearance="fill">
+                        <mat-label>
+                            <span>Promotion Type <span class="validationStar">*</span></span>
+                        </mat-label>
+                        <mat-select class="ptype" [(ngModel)]="promoTypeDrp" [ngModelOptions]="{standalone: true}" (selectionChange)="onChangePromoType($event)">
+                            <mat-option *ngFor='let promoType of getPromoTypeValue' [value]="promoType" >{{ promoType }}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-md-12 row promotionDetails">
+                <h6>Event Details</h6>
+                <div class="col-md-3">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>
+                            <span>Event Code </span>
+                        </mat-label>
+                        <input matInput placeholder="Event Code" [(ngModel)]= "eventCodeValue" [ngModelOptions]="{standalone: true}" maxlength="15" pattern="[a-zA-Z0-9]*" required>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-3">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>
+                            <span>Event Name/Description</span>
+                        </mat-label>
+                        <input matInput placeholder="Name of the Event" [(ngModel)]= "eventNameValue" [ngModelOptions]="{standalone: true}" required>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-3">
+                    <mat-form-field appearance="fill">
+                        <mat-label>
+                            <span>Country <span class="validationStar">*</span></span>
+                        </mat-label>
+                        <mat-select [(ngModel)]="countryDrp" [ngModelOptions]="{standalone: true}" (selectionChange)="onChangeCountry($event)">
+                            <mat-option *ngFor='let country of getCountryValues' [value]="country">{{ country.name }} </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-3">
+                <mat-form-field appearance="fill">
+                    <mat-label>
+                        <span>Brand <span class="validationStar">*</span></span>
+                    </mat-label>
+                    <mat-select [(ngModel)]="brandDrp" [ngModelOptions]="{standalone: true}" (selectionChange)="onChangeBrand($event)">
+                        <mat-option *ngFor='let brand of getBrandValues' [value]="brand">{{ brand.name }} </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                </div>
+                <!-- <div class="col-md-3">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>
+                            <span>Event ID </span>
+                        </mat-label>
+                        <input matInput placeholder="Event ID" [(ngModel)]= "eventIdValue" [ngModelOptions]="{standalone: true}" required>
+                    </mat-form-field>
+                </div> -->
+                <div class="col-md-3">
+                    <mat-form-field appearance="fill">
+                        <mat-label>                            
+                            <span>Financial Year <span class="validationStar">*</span></span>
+                        </mat-label>
+                        <mat-select [(ngModel)]="financialyear" [ngModelOptions]="{standalone: true}"  (selectionChange)="onChangeFinanceYear($event)">
+                            <mat-option *ngFor='let finyear of financialyearValues1' [value]="finyear">{{ finyear }}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-3">
+                    <mat-form-field appearance="fill">
+                        <mat-label>
+                            <span>Tolerance Days</span>
+                        </mat-label>
+                        <mat-select [(value)]="toleranceDays">
+                            <mat-option *ngFor='let tolerantDays of getToleranceValues' [value]="tolerantDays"> {{ tolerantDays }} </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-3">
+                    <mat-form-field appearance="fill">
+                        <mat-label>
+                            <span>Start Date</span>
+                        </mat-label>
+                        <input matInput [matDatepicker]="picker" [formControl]="startdate" required [min]="financeYearStartDate" [max]="financeYearEndDate">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-3">
+                    <mat-form-field appearance="fill">
+                        <mat-label>
+                            <span>End Date</span>
+                        </mat-label>
+                        <input matInput [matDatepicker]="picker1" [formControl]="enddate" [min]="financeYearStartDate" [max]="financeYearEndDate" required>
+                        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                        <mat-datepicker #picker1></mat-datepicker>
+                    </mat-form-field>
+                </div>
+        </div>
+    </div>
+    <span class="errorM" *ngIf="dateRange">Start date is greater than end date</span>
+    <div *ngIf="postpromoerror" class="errorM">
+        {{ postpromoerrormessage }}
+    </div>
+    <mat-card-actions class="eventButtons">
+        <button mat-flat-button color="primary" class="applyButton" (click)="createEvent()">Save</button>
+        <button mat-flat-button color="primary" class="applyButton" (click)="searchEvent()">Search Event</button>
+        <!-- <button mat-flat-button color="primary" class="applyButton">Add Promotions</button> -->
+        <!-- <button mat-flat-button color="primary" class="applyButton" (click)="addNewPromo()" [disabled]="saveEvent">Add New Promotion</button> -->
+    </mat-card-actions>
+</form>
+</mat-card>
+
+<ng-template #callAPIDialog>
+    <h2 matDialogTitle>Do you like to save the Event?</h2>
+    <mat-dialog-actions align="end">
+        <button mat-button matDialogClose="no"(click)="eventNo()">No</button>
+        <button mat-button matDialogClose="yes" (click)="eventYes()">Yes</button>
+    </mat-dialog-actions>
+</ng-template>

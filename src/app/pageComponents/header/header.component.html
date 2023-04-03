@@ -1,0 +1,16 @@
+<div class="headerBg row">
+    <div class="col-md-1">
+        <a href="#">
+            <img src='../../../assets/images/srg-logo.jpg'>
+        </a>
+    </div>
+    <div class="col-md-11 row">
+        <div class="col-md-6">
+            <h4>Voucher Management System</h4>
+        </div>
+        <div class="col-md-6 signIn" *ngIf="userLoggedIn">
+            <h6>Welcome {{ vmsUser }} <i class="bi bi-person-circle"></i></h6>
+            <span class="signOut" (click)="signOut()">Sign out </span>
+        </div>
+    </div>
+</div>

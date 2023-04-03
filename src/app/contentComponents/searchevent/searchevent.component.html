@@ -1,0 +1,156 @@
+<!-- <div class="advanceSearchSection"> -->
+    <ngx-spinner bdColor="rgba(51,51,51,0.8)"
+               size="large"
+               color="#022452"
+               type="ball-scale-multiple">
+</ngx-spinner>
+    <mat-card>
+        <div class="col-md-12 row">
+            <mat-card-title><h5>Search An Event</h5></mat-card-title>
+            <div class="col-md-3 eventsearch">
+                <mat-form-field appearance="fill">
+                    <mat-label>Promotion Type <span class="validationStar">*</span></mat-label>
+                    <mat-select [(ngModel)]="promotionsDrp" (selectionChange)="onChangePromoType($event)">
+                        <mat-option *ngFor='let promo of filteredPromoTypes' [value]="promo">{{ promo }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-md-3 eventsearch">
+            <mat-form-field appearance="fill">
+                <mat-label>                            
+                    <span>Financial Year <span class="validationStar">*</span></span>
+                </mat-label>
+                <mat-select [(ngModel)]="financialyear" [ngModelOptions]="{standalone: true}" (selectionChange)="onChangeFinance($event)">
+                    <mat-option *ngFor='let finyear of financialyearValues1' [value]="finyear">{{ finyear }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            </div>
+            <div class="col-md-3 eventsearch">
+                <mat-form-field appearance="fill">
+                    <mat-label>Event ID</mat-label>
+                    <input matInput placeholder="Event ID" [(ngModel)] ="eventId" [ngModelOptions]="{standalone: true}">
+                </mat-form-field>
+            </div>
+            <div class="col-md-3 eventsearch">
+                <mat-form-field appearance="fill">
+                    <mat-label>Event Code</mat-label>
+                    <input matInput placeholder="Event Code" [(ngModel)] ="eventCode" [ngModelOptions]="{standalone: true}">
+                </mat-form-field>
+            </div>
+            <div class="col-md-3">
+                <mat-form-field appearance="fill">
+                    <mat-label>Country <span class="validationStar">*</span></mat-label>
+                    <mat-select [(ngModel)]="countryDrp" (selectionChange)="onChangeCountry($event)">
+                        <mat-option *ngFor='let country of countryDrpValues' [value]="country.name">{{ country.name }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-md-3">
+                <mat-form-field appearance="fill">
+                    <mat-label>Brand <span class="validationStar">*</span></mat-label>
+                    <mat-select [(ngModel)]="brandDrp" (selectionChange)="onChangeBrand($event)">
+                        <mat-option *ngFor='let brand of brandDrpValues' [value]="brand.name">{{ brand.name }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-md-3">
+                <mat-form-field appearance="fill">
+                    <mat-label>
+                        <span>Start Date</span>
+                    </mat-label>
+                    <input matInput [matDatepicker]="picker" [(ngModel)] ="startdate" [ngModelOptions]="{standalone: true}" [min]="financeYearStartDate" [max]="financeYearEndDate">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div class="col-md-3">
+                <mat-form-field appearance="fill">
+                    <mat-label>
+                        <span>End Date</span>
+                    </mat-label>
+                    <input matInput [matDatepicker]="picker1" [(ngModel)] ="enddate" [ngModelOptions]="{standalone: true}" [min]="financeYearStartDate" [max]="financeYearEndDate">
+                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div class="col-md-3 eventsearch">
+                <mat-form-field appearance="fill">
+                    <mat-label>Event Name</mat-label>
+                    <input matInput placeholder="Event Name" [(ngModel)] ="eventName" [ngModelOptions]="{standalone: true}">
+                </mat-form-field>
+            </div>
+            <div class="col-md-9"></div>   
+        </div>
+        <span class="errorM" *ngIf="dateRange">Start date is greater than end date</span>
+        <mat-card-actions>
+            <!-- <button mat-flat-button color="primary" class="applyButton" routerLink="/createpromotion" [disabled] = "disablePromo">Create New Promotion</button> -->
+            <button mat-flat-button color="primary" class="applyButton" (click)="searchEvent()">Search</button>
+            <button mat-flat-button color="primary" class="applyButton" (click)="createEvent()">Create Event</button>
+        </mat-card-actions>
+        <h5 class="promotionsList" *ngIf="tableShow">List of Events</h5>
+        <span class="noRecords" *ngIf="norecords">No Records Found</span>
+          <div class="table-responsive" *ngIf="tableShow">
+              <table mat-table [dataSource]="filteredEvents" class="mat-elevation-z8 demo-table">
+                
+                  <ng-container matColumnDef="type">
+                    <th mat-header-cell *matHeaderCellDef> Type </th>
+                    <td mat-cell *matCellDef="let element"> {{element.promotionEventType}} </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="financialyear">
+                    <th mat-header-cell *matHeaderCellDef> Financial Year </th>
+                    <td mat-cell *matCellDef="let element"> {{ element.financialYear }} </td>
+                  </ng-container>
+                
+  
+                  <ng-container matColumnDef="eventId">
+                    <th mat-header-cell *matHeaderCellDef> Event ID </th>
+                    <td mat-cell *matCellDef="let element"> {{ element.eventId }} </td>
+                  </ng-container>
+  
+                  <ng-container matColumnDef="eventCode">
+                    <th mat-header-cell *matHeaderCellDef> Event Code </th>
+                    <td mat-cell *matCellDef="let element"> {{ element.eventCode }} </td>
+                  </ng-container>
+  
+                  <ng-container matColumnDef="country">
+                    <th mat-header-cell *matHeaderCellDef> Country </th>
+                    <td mat-cell *matCellDef="let element"> {{ element.country }} </td>
+                  </ng-container>
+  
+                  <ng-container matColumnDef="brand">
+                      <th mat-header-cell *matHeaderCellDef> Brand </th>
+                      <td mat-cell *matCellDef="let element"> {{ element.brand }} </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="eventName">
+                    <th mat-header-cell *matHeaderCellDef> Event Name </th>
+                    <td mat-cell *matCellDef="let element"> {{ element.eventName }} </td>
+                  </ng-container>
+  
+                  <ng-container matColumnDef="startdate">
+                    <th mat-header-cell *matHeaderCellDef> Start Date </th>
+                    <td mat-cell *matCellDef="let element"> {{ element.startDate }} </td>
+                  </ng-container>
+        
+                  <ng-container matColumnDef="enddate">
+                    <th mat-header-cell *matHeaderCellDef> End Date </th>
+                    <td mat-cell *matCellDef="let element"> {{element.endDate}} </td>
+                  </ng-container>
+  
+                  <ng-container matColumnDef="toleranceDays">
+                    <th mat-header-cell *matHeaderCellDef> Tolerance Days </th>
+                    <td mat-cell *matCellDef="let element"> {{element.toleranceDays}} </td>
+                  </ng-container>
+  
+                  <ng-container matColumnDef="extendableDays">
+                    <th mat-header-cell *matHeaderCellDef> Extendable Days </th>
+                    <td mat-cell *matCellDef="let element"> {{element.extendableDays}} </td>
+                  </ng-container>             
+          
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true" ></tr>
+                  <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="updateEvent(row)"></tr>
+                </table>
+                </div>
+    <!-- </div> -->
+    </mat-card>

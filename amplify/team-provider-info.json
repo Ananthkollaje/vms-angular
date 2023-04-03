@@ -1,0 +1,23 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-vouchermanagementsys-dev-123404-authRole",
+      "UnauthRoleArn": "arn:aws:iam::245603283044:role/amplify-vouchermanagementsys-dev-123404-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::245603283044:role/amplify-vouchermanagementsys-dev-123404-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-vouchermanagementsys-dev-123404-deployment",
+      "UnauthRoleName": "amplify-vouchermanagementsys-dev-123404-unauthRole",
+      "StackName": "amplify-vouchermanagementsys-dev-123404",
+      "StackId": "arn:aws:cloudformation:us-west-2:245603283044:stack/amplify-vouchermanagementsys-dev-123404/e71fe190-c465-11ec-8afb-0a1da1a0ac0f",
+      "AmplifyAppId": "d2qt5corx1cxbq"
+    },
+    "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d2qt5corx1cxbq",
+          "type": "manual"
+        }
+      }
+    }
+  }
+}

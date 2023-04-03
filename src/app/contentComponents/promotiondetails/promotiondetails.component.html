@@ -1,0 +1,362 @@
+<mat-card>
+    <div class="col-md-12 row promotionPage">
+        <mat-card-title><h5>Promotion Details</h5></mat-card-title>
+        <div class="col-md-12 row promotypeSection">
+            <div class="col-md-4">
+                <mat-form-field appearance="fill">
+                    <mat-label><span class="validationStar">*</span>
+                        <span>Promotion Type</span>
+                        <span class="material-icons question">help</span>
+                    </mat-label>
+                    <mat-select [(value)]="promoTypeDrp" (selectionChange)="onChangePromoType($event)" [disabled]="promodetailsedit">
+                        <mat-option *ngFor='let promoType of promoTypeDrpValues' [value]="promoType">{{ promoType }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <!-- <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>
+                        <span class="validationStar">*</span>
+                        <span>VMS Promotion ID</span>
+                        <span class="material-icons question">help</span>
+                    </mat-label>
+                    <input matInput placeholder="Promo Code" value="23334" disabled>
+                </mat-form-field> -->
+            </div>
+            <div class="col-md-4">
+                <mat-form-field appearance="fill">
+                    <mat-label><span class="validationStar">*</span>
+                        <span>Promotion Status</span>
+                        <span class="material-icons question">help</span>
+                    </mat-label>
+                    <mat-select [(value)]="statusDrp" [disabled]="promodetailsedit">
+                        <mat-option *ngFor='let status of statusDrpValues' [value]="status">{{ status }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="col-md-12 row promotionDetails">
+                <h6>Promotion Details</h6>
+            
+            <!-- <div class="col-md-3">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>
+                        <span class="validError">*</span>
+                        <span>Event ID</span>
+                        <span class="material-icons question">help</span>
+                    </mat-label>
+                    <input matInput placeholder="Promo Code" value="23334">
+                </mat-form-field>
+            </div> -->
+            <div class="col-md-3">
+                <mat-form-field appearance="fill">
+                    <mat-label><span class="validationStar">*</span>
+                        <span>Brand</span>
+                        <span class="material-icons question">help</span>
+                    </mat-label>
+                    <mat-select [(ngModel)]="brandDrp" (selectionChange)="onChangeBrand($event)" [disabled]="promodetailsedit">
+                        <mat-option *ngFor='let brand of brandDrpValues' [value]="brand">{{ brand }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>
+                        <span class="validationStar">*</span>
+                        <span>Promotion Overview</span>
+                        <span class="material-icons question">help</span>
+                    </mat-label>
+                    <input matInput placeholder="Promotion Overview" value="Promotion Overview" [disabled]="promodetailsedit">
+                </mat-form-field>
+            </div>
+            <div class="col-md-3">
+                <mat-form-field appearance="fill">
+                    <mat-label><span class="validationStar">*</span>
+                        <span>Advertising Channel</span>
+                        <span class="material-icons question">help</span>
+                    </mat-label>
+                    <mat-select [(value)]="adChannelDrp" (selectionChange)="onChangeAdChannel($event)" [disabled]="promodetailsedit">
+                        <mat-option *ngFor='let adchannel of adChannelDrpValues' [value]="adchannel">{{ adchannel }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-md-3">
+                <mat-form-field appearance="fill">
+                    <mat-label><span class="validationStar">*</span>
+                        <span>Redeemed by</span>
+                        <span class="material-icons question">help</span>
+                    </mat-label>
+                    <mat-select [(value)]="redeemedBy" (selectionChange)="onChangeRedeemedBy($event)" [disabled]="redeem || promodetailsedit">
+                        <mat-option *ngFor='let redeemedby of redeemedByValues' [value]="redeemedby">{{ redeemedby }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-md-3">
+                <mat-form-field appearance="fill">
+                    <mat-label>
+                        <span class="validationStar">*</span>
+                        <span>Start Date</span>
+                        <span class="material-icons question">help</span>
+                    </mat-label>
+                    <input matInput [matDatepicker]="picker" [formControl]="startdate" [disabled]="promodetailsedit">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div class="col-md-3">
+                <mat-form-field appearance="fill">
+                    <mat-label>
+                        <!-- <span class="validError">*</span> -->
+                        <span>End Date</span>
+                        <span class="material-icons question">help</span>
+                    </mat-label>
+                    <input matInput [matDatepicker]="picker1" [formControl]="enddate" [disabled]="promodetailsedit">
+                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div class="col-md-3">
+                <mat-form-field appearance="fill">
+                    <mat-label><span class="validationStar">*</span>
+                        <span>Promotion Channel</span>
+                        <span class="material-icons question">help</span>
+                    </mat-label>
+                    <mat-select [(ngModel)]="channelDrp" (selectionChange)="onChangeChannel($event)" [disabled]="promodetailsedit">
+                        <mat-option *ngFor='let channel of channelDrpValues' [value]="channel">{{ channel }}</mat-option>
+                        <!-- <mat-option value="pos">POS</mat-option>
+                        <mat-option value="online">Online</mat-option>
+                        <mat-option value="both">Both</mat-option> -->
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-md-3" *ngIf="selectOnline">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>
+                        <!-- <span class="validError">*</span> -->
+                        <span>Online Promo Code</span>
+                        <span class="material-icons question">help</span>
+                    </mat-label>
+                    <input matInput placeholder="Online Promo Code" value="23334" [disabled]="promodetailsedit">
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="col-md-12 row offerDetails">
+                <h6>Offer Details</h6>
+        
+        <div class="col-md-3">
+            <mat-form-field appearance="fill">
+                <mat-label><span class="validationStar">*</span>
+                    <span>Article ID</span>
+                    <span class="material-icons question">help</span>
+                </mat-label>
+                <input matInput placeholder="Article ID" value="23334" [disabled]="promodetailsedit">
+            </mat-form-field>
+        </div>
+        <div class="col-md-3">
+            <mat-form-field appearance="fill">
+                <mat-label><span class="validationStar">*</span>
+                    <span>Discount Type</span>
+                    <span class="material-icons question">help</span>
+                </mat-label>
+                <input matInput placeholder="Discount Type" value="$10 Off" [disabled]="promodetailsedit">
+            </mat-form-field>
+        </div>
+        <div class="col-md-3">
+            <mat-form-field appearance="fill">
+                <mat-label><span class="validationStar">*</span>
+                    <span>Discount Amount</span>
+                    <span class="material-icons question">help</span>
+                </mat-label>
+                <input matInput placeholder="Discount Amount" value="$10 Off" [disabled]="promodetailsedit">
+            </mat-form-field>
+        </div>
+        <div class="col-md-3">
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>
+                    <!-- <span class="validError">*</span> -->
+                    <span>Minimum Spend ($)</span>
+                    <span class="material-icons question">help</span>
+                </mat-label>
+                <input matInput placeholder="Online Promo Code" value="100" [disabled]="promodetailsedit">
+            </mat-form-field>
+        </div>
+        <div class="col-md-4">
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>
+                    <span class="validationStar">*</span>
+                    <span>Coupon Description</span>
+                    <span class="material-icons question">help</span>
+                </mat-label>
+                <textarea matInput placeholder="Please details about the Coupon" [disabled]="promodetailsedit"></textarea>
+            </mat-form-field>
+        </div>
+        <div class="col-md-4">
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>
+                    <span class="validationStar">*</span>
+                    <span>Receipt Description</span>
+                    <span class="material-icons question">help</span>
+                </mat-label>
+                <textarea matInput placeholder="Please enter receipt description" [disabled]="promodetailsedit"></textarea>
+            </mat-form-field>
+        </div>
+        <div class="col-md-4">
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>
+                    <span class="validationStar">*</span>
+                    <span>Terms and conditions</span>
+                    <span class="material-icons question">help</span>
+                </mat-label>
+                <textarea matInput placeholder="Please read terms and conditions" [disabled]="promodetailsedit"></textarea>
+            </mat-form-field>
+        </div>
+        </div>       
+    </div>
+    <div class="col-md-12 row">
+        <div class="col-md-6 promoRegion" *ngIf="selectRegionPOS">
+            <h6>Promotion Location</h6>
+            <div class="row">
+                    <div class="col-md-6">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>
+                                <span class="validationStar">*</span>
+                                <span>Level</span>
+                                <span class="material-icons question">help</span>
+                            </mat-label>
+                            <mat-select [(value)]="promoLevelDrp" (selectionChange)="onChangePromoLevel($event)" [disabled]="promodetailsedit">
+                                <mat-option *ngFor='let level of promotionLevel' [value]="level">{{ level }}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-6" *ngIf="promolevelcountries">
+                        <mat-form-field appearance="fill">
+                            <mat-label><span class="validationStar">*</span>
+                                <span>Country</span>
+                                <span class="material-icons question">help</span>
+                            </mat-label>
+                            <input matInput placeholder="Discount Type" [value]="promolevelcountry" [disabled]="promodetailsedit">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-6" *ngIf="promolevelstate">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>
+                                <span class="validationStar">*</span>
+                                <span>State</span>
+                                <span class="material-icons question">help</span>
+                            </mat-label>
+                             <!-- <input matInput placeholder="Promo Name" value="New Year"> -->
+                            <mat-select [(value)]="statesDrp" (selectionChange)="onChangeStates($event)" [disabled]="promodetailsedit">
+                                <mat-option *ngFor='let states of changedStates' [value]="states">{{ states }}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-6" *ngIf="promolevelstore">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>
+                                <span class="validationStar">*</span>
+                                <span>Store(s)</span>
+                                <span class="material-icons question">help</span>
+                            </mat-label>
+                            <!-- <mat-select placeholder="Stores">
+                                <mat-option *ngFor="let storeid of storeIdss; let i =index" [value]="storeid">
+                                    <mat-checkbox [checked]="selected === i" (change)="onChange(storeid);selected = i"> {{storeid}}</mat-checkbox>
+                                </mat-option>
+                            </mat-select> -->
+                            <mat-select multiple  [(value)]="selected" [disabled]="promodetailsedit">
+                                <mat-option *ngFor="let criterion of storeIdss" 
+                                  [value]="criterion">
+                                  {{criterion}}
+                                </mat-option>
+                              </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-6">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>
+                                <!-- <span class="validError">*</span> -->
+                                <span>POS Promotion ID</span>
+                                <span class="material-icons question">help</span>
+                            </mat-label>
+                            <input matInput placeholder="POS Promo Code" [disabled]="promodetailsedit">
+                        </mat-form-field>
+                    </div>
+            </div>
+        </div>
+        <div class="col-md-6 adverRegion" *ngIf="selectRegionEcom">
+            <h6>Advertising Location</h6>
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>
+                            <span class="validationStar">*</span>
+                            <span>Location Level</span>
+                            <span class="material-icons question">help</span>
+                        </mat-label>
+                        <mat-select [(value)]="adLevelDrp" (selectionChange)="onChangeadLevel($event)" [disabled]="promodetailsedit">
+                            <mat-option *ngFor='let level of adLevel' [value]="level">{{ level }}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                 <div class="col-md-6" *ngIf="adlevelcountries">
+                    <mat-form-field appearance="fill">
+                        <mat-label><span class="validationStar">*</span>
+                            <span>Country</span>
+                            <span class="material-icons question">help</span>
+                        </mat-label>
+                        <input matInput placeholder="Discount Type" [value]="adlevelcountry" [disabled]="promodetailsedit">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6" *ngIf="adlevelstate">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>
+                            <span class="validationStar">*</span>
+                            <span>State</span>
+                            <span class="material-icons question">help</span>
+                        </mat-label>
+                         <!-- <input matInput placeholder="Promo Name" value="New Year"> -->
+                        <mat-select [(value)]="statesDrp" (selectionChange)="onChangeStates($event)" [disabled]="promodetailsedit">
+                            <mat-option *ngFor='let states of changedStates' [value]="states">{{ states }}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6" *ngIf="adlevelstore">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>
+                            <span class="validationStar">*</span>
+                            <span>Store(s)</span>
+                            <span class="material-icons question">help</span>
+                        </mat-label>
+                        <!-- <mat-select placeholder="Stores">
+                            <mat-option *ngFor="let storeid of storeIdss; let i =index" [value]="storeid">
+                                <mat-checkbox [checked]="selected === i" (change)="onChange(storeid);selected = i"> {{storeid}}</mat-checkbox>
+                            </mat-option>
+                        </mat-select> -->
+                        <mat-select multiple  [(value)]="selected" [disabled]="promodetailsedit">
+                            <mat-option *ngFor="let criterion of storeIdss" 
+                              [value]="criterion" >
+                              {{criterion}}
+                            </mat-option>
+                          </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>
+                            <!-- <span class="validError">*</span> -->
+                            <span>ECOM Promotion ID</span>
+                            <span class="material-icons question">help</span>
+                        </mat-label>
+                        <input matInput placeholder="POS Promo Code" [value]="ecompromoid" [disabled]="promodetailsedit">
+                    </mat-form-field>
+                </div>
+        </div>
+        </div>
+    </div>
+    <mat-card-actions>
+         <button mat-stroked-button class="resetButton" [disabled]="promodetailsedit">Reset</button>
+        <button mat-flat-button color="primary" class="applyButton" [disabled]="promodetailsedit">Update Promotion</button>
+        <button mat-stroked-button class="editButton" (click)="editDetails()">Edit</button>
+        <!-- <button mat-flat-button color="primary" class="applyButton">Activate Promotion</button> -->
+        <!-- <button mat-flat-button color="primary" class="applyButton">Create New Voucher</button> -->
+    </mat-card-actions>
+</mat-card>

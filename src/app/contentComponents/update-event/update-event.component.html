@@ -1,0 +1,296 @@
+<ngx-spinner bdColor="rgba(51,51,51,0.8)"
+size="large"
+color="#022452"
+type="ball-scale-multiple"></ngx-spinner>
+<mat-card>
+    <form #updateEventForm="ngForm" id="updateEventForm" (ngSubmit)="updateEventForm.form.valid">
+    <div class="col-md-12 row">
+        <mat-card-title><h5>Update An Event</h5></mat-card-title>
+            <div class="col-md-3">
+                <mat-form-field appearance="fill">
+                    <mat-label>
+                        <span>Promotion Type <span class="validationStar">*</span></span>
+                    </mat-label>
+                    <mat-select class="ptype" [(ngModel)]="promoTypeDrp" [ngModelOptions]="{standalone: true}" (selectionChange)="onChangePromoType($event)" [disabled]="updateDisabled">
+                        <mat-option *ngFor='let promoType of getPromoTypeValue' [value]="promoType" >{{ promoType }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-md-3">
+                <mat-form-field appearance="fill">
+                    <mat-label>
+                        <span>Country <span class="validationStar">*</span></span>
+                    </mat-label>
+                    <mat-select [(ngModel)]="countryDrp" [ngModelOptions]="{standalone: true}" (selectionChange)="onChangeCountry($event)" [disabled]="updateDisabled">
+                        <mat-option *ngFor='let country of getCountryValues' [value]="country">{{ country }} </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-md-3">
+               <mat-form-field appearance="fill">
+                   <mat-label>
+                       <span>Brand <span class="validationStar">*</span></span>
+                   </mat-label>
+                   <mat-select [(ngModel)]="brandDrp" [ngModelOptions]="{standalone: true}" (selectionChange)="onChangeBrand($event)" [disabled]="updateDisabled">
+                    <mat-option *ngFor='let brand of getBrandValues' [value]="brand">{{ brand }} </mat-option>
+                   </mat-select>
+               </mat-form-field>
+            </div>
+            <div class="col-md-3">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>
+                        <span>Event ID </span>
+                    </mat-label>
+                    <input matInput placeholder="Event ID" [(ngModel)]= "eventIdValue" [ngModelOptions]="{standalone: true}" disabled>
+                </mat-form-field>
+            </div>
+            <div class="col-md-3">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>
+                        <span>Event Code </span>
+                    </mat-label>
+                    <input matInput placeholder="Event Code" [(ngModel)]= "eventCodeValue" [ngModelOptions]="{standalone: true}" pattern="[a-zA-Z0-9]*" required [disabled]="updateDisabled">
+                </mat-form-field>
+            </div>
+        <div class="col-md-3">
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>
+                    <span>Event Name/Description</span>
+                </mat-label>
+                <input matInput placeholder="Name of the Event" [(ngModel)]= "eventNameValue" [ngModelOptions]="{standalone: true}" required [disabled]="updateDisabled">
+            </mat-form-field>
+        </div>
+        <div class="col-md-3">
+            <mat-form-field appearance="fill">
+                <mat-label>
+                    <span>Start Date</span>
+                </mat-label>
+                <input matInput [matDatepicker]="picker" [(ngModel)]="startdate" [ngModelOptions]="{standalone: true}" required [disabled]="updateDisabled" [min]="financeYearStartDate" [max]="financeYearEndDate">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+        <div class="col-md-3">
+            <mat-form-field appearance="fill">
+                <mat-label>
+                    <span>End Date</span>
+                </mat-label>
+                <input matInput [matDatepicker]="picker1" [(ngModel)]="enddate" [ngModelOptions]="{standalone: true}" required [disabled]="updateDisabled" [min]="financeYearStartDate" [max]="financeYearEndDate">
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+        </div>
+        <div class="col-md-3">
+          <mat-form-field appearance="fill">
+              <mat-label>                            
+                  <span>Financial Year <span class="validationStar">*</span></span>
+              </mat-label>
+              <mat-select [(ngModel)]="financialyear" [ngModelOptions]="{standalone: true}" [disabled]="updateDisabled" (selectionChange)="onChangeFinanceYear($event)">
+                  <mat-option *ngFor='let finyear of financialyearValues1' [value]="finyear">{{ finyear }}</mat-option>
+              </mat-select>
+          </mat-form-field>
+       </div>
+       <div class="col-md-3">
+        <mat-form-field appearance="fill">
+            <mat-label>
+                <span>Tolerance Days <span class="validationStar">*</span></span>
+            </mat-label>
+            <mat-select [(value)]="toleranceDays" [disabled]="updateDisabled">
+                <mat-option *ngFor='let tolerantDays of getToleranceValues' [value]="tolerantDays"> {{ tolerantDays }} </mat-option>
+            </mat-select>
+        </mat-form-field>
+      </div>
+        
+    </div>
+    <span class="errorM" *ngIf="dateRange">Start date is greater than end date</span>
+    <div class="successMessage" *ngIf="updatedSuccess">
+      Event is updated Successfully
+    </div>
+    <mat-card-actions class="eventButtons">
+        <button mat-flat-button color="primary" class="applyButton" (click)="updateEvent()" [disabled]="updateDisabled">Update</button>
+        <!-- <button mat-flat-button color="primary" class="applyButton">Add Promotions</button> -->
+        <!-- <button mat-flat-button color="primary" class="applyButton" (click)="reloadData()"  [disabled]="promoList">Event Promotions</button> -->
+        <button mat-flat-button color="primary" class="applyButton" (click)="addNewPromo()">Add New Promotion</button>
+        <button mat-flat-button color="primary" class="applyButton" (click)="createNewEvent()">Create New Event</button>
+        <button mat-flat-button color="primary" class="applyButton" (click)="searchEvent()">Search Event</button>
+        <!-- <button mat-flat-button color="primary" class="applyButton" (click)="existingPromos()">Add Created Promotions</button> -->
+    </mat-card-actions>
+</form>
+<div class="table-responsive" *ngIf="tableShow">
+            <h5>Promotions for the Event</h5>
+            <table mat-table [dataSource]="filteredPromotions" class="mat-elevation-z8 demo-table">
+              
+                <ng-container matColumnDef="type">
+                  <th mat-header-cell *matHeaderCellDef> Type </th>
+                  <td mat-cell *matCellDef="let element"> {{element.promotionType}} </td>
+                </ng-container>
+              
+                <ng-container matColumnDef="id">
+                  <th mat-header-cell *matHeaderCellDef> ID </th>
+                  <td mat-cell *matCellDef="let element"> {{element.promotionId}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="promotionStatus">
+                  <th mat-header-cell *matHeaderCellDef> Status </th>
+                  <td mat-cell *matCellDef="let element"> {{ element.promotionStatus }} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="financialyear">
+                  <th mat-header-cell *matHeaderCellDef> Financial Year </th>
+                  <td mat-cell *matCellDef="let element"> {{ element.financialYear }} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="eventId">
+                  <th mat-header-cell *matHeaderCellDef> Event ID </th>
+                  <td mat-cell *matCellDef="let element"> {{ element.eventId }} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="eventCode">
+                  <th mat-header-cell *matHeaderCellDef> Event Code </th>
+                  <td mat-cell *matCellDef="let element"> {{ element.eventCode }} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="country">
+                  <th mat-header-cell *matHeaderCellDef> Country </th>
+                  <td mat-cell *matCellDef="let element"> {{ element.country }} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="brand">
+                    <th mat-header-cell *matHeaderCellDef> Brand </th>
+                    <td mat-cell *matCellDef="let element"> {{ element.brand }} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="overview">
+                  <th mat-header-cell *matHeaderCellDef> Promotion Overview </th>
+                  <td mat-cell *matCellDef="let element"> {{element.promotionOverview}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="redeemed">
+                  <th mat-header-cell *matHeaderCellDef> Redeemable By </th>
+                  <td mat-cell *matCellDef="let element"> {{element.redeemableBy}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="startdate">
+                  <th mat-header-cell *matHeaderCellDef> Start Date </th>
+                  <td mat-cell *matCellDef="let element"> {{ element.startDate }} </td>
+                </ng-container>
+      
+                <ng-container matColumnDef="enddate">
+                  <th mat-header-cell *matHeaderCellDef> End Date </th>
+                  <td mat-cell *matCellDef="let element"> {{element.endDate}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="advertisingChannel">
+                  <th mat-header-cell *matHeaderCellDef> Advertising Channel </th>
+                  <td mat-cell *matCellDef="let element"> {{element.advertisingChannel}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="salesChannel">
+                  <th mat-header-cell *matHeaderCellDef> Sales Channel </th>
+                  <td mat-cell *matCellDef="let element"> {{element.salesChannel}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="toleranceDays">
+                  <th mat-header-cell *matHeaderCellDef> Tolerance Days </th>
+                  <td mat-cell *matCellDef="let element"> {{element.toleranceDays}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="extendableDays">
+                  <th mat-header-cell *matHeaderCellDef> Extendable Days </th>
+                  <td mat-cell *matCellDef="let element"> {{element.extendableDays}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="promoCode">
+                  <th mat-header-cell *matHeaderCellDef> Online Promo Code </th>
+                  <td mat-cell *matCellDef="let element"> {{element.promoCode}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="discounttype">
+                  <th mat-header-cell *matHeaderCellDef> Discount Type </th>
+                  <td mat-cell *matCellDef="let element"> {{ element.discountType }} </td>
+                </ng-container>
+        
+                <ng-container matColumnDef="discountamount">
+                  <th mat-header-cell *matHeaderCellDef> Discount Amount </th>
+                  <td mat-cell *matCellDef="let element"> {{ element.discountAmount }} </td>
+                </ng-container>
+                  
+                <ng-container matColumnDef="minimumspend">
+                  <th mat-header-cell *matHeaderCellDef> Minimum Spend </th>
+                  <td mat-cell *matCellDef="let element"> {{element.minimumSpend}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="coupondescription">
+                  <th mat-header-cell *matHeaderCellDef> Coupon Description </th>
+                  <td mat-cell *matCellDef="let element"> {{ element.couponDescription }} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="receiptdescription">
+                  <th mat-header-cell *matHeaderCellDef> Receipt Description </th>
+                  <td mat-cell *matCellDef="let element"> {{ element.receiptDescription }} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="termsandconditions">
+                  <th mat-header-cell *matHeaderCellDef> Terms and Conditions </th>
+                  <td mat-cell *matCellDef="let element"> <div> {{ element.termsAndConditions }} </div></td>
+                </ng-container>
+
+                <ng-container matColumnDef="posPromotionId">
+                  <th mat-header-cell *matHeaderCellDef> POS Promotion ID </th>
+                  <td mat-cell *matCellDef="let element"> {{ element.posPromotionId }} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="ecomPromotionId">
+                  <th mat-header-cell *matHeaderCellDef> ECOM Promotion Id </th>
+                  <td mat-cell *matCellDef="let element"> {{ element.ecomPromotionId }} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="qrCodeColour">
+                  <th mat-header-cell *matHeaderCellDef> QR Code Image Colour</th>
+                  <td mat-cell *matCellDef="let element"> {{ element.qrCodeColour }} </td>
+                </ng-container>              
+        
+                <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true" ></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="updatePromFromEvent(row)"></tr>
+              </table>
+              </div>
+</mat-card>
+<ng-template [ngIf]="newPromo">
+    <app-srgpromotion 
+    [fromEvent]="promoFromEvent"
+    [fromEventPromoType] = "fromEventPromoType"
+    [eventIdFromEvent] = "eventIdFromEvent"
+    [eventCodeFromEvent]="eventCodeFromEvent"
+    [eventNameFromEvent]="eventNameFromEvent"
+    [countryFromEvent] = "countryFromEvent"
+    [brandFromEvent]="brandFromEvent"
+    [eventStartDateFromEvent] = "eventStartDateFromEvent"
+    [eventEndDateFromEvent] = "eventEndDateFromEvent"
+    [eventFinancialY] = "eventFinancialY"
+    [eventToleranceFromEvent]= "eventToleranceFromEvent"
+    (promotionAdded) = "updatedEvent($event)"
+    (promotionCanceled) = "cancelPromoCreation($event)"
+    ></app-srgpromotion>
+    <!-- <app-srgpromotion 
+    [fromEvent]="promoFromEvent"
+    [fromEventPromoType] = "fromEventPromoType"
+    [brand]="brandFromEvent" 
+    [eventCodeFromEvent]="eventCodeFromEvent"
+    [eventNameFromEvent]="eventNameFromEvent"
+    [eventExtendableFromEvent]="eventExtendableFromEvent"
+    [eventStartDateFromEvent]="eventStartDateFromEvent"
+    [eventEndDateFromEvent]="eventEndDateFromEvent"
+    ></app-srgpromotion> -->
+</ng-template>
+<!-- <ng-template [ngIf]="createdPromos">
+  <app-promotionsearch>
+
+  </app-promotionsearch>
+</ng-template> -->
+<ng-template #callAPIDialog>
+    <h2 matDialogTitle>Do you like to save the Event?</h2>
+    <mat-dialog-actions align="end">
+        <button mat-button matDialogClose="no"(click)="eventNo()">No</button>
+        <button mat-button matDialogClose="yes" (click)="eventYes()">Yes</button>
+    </mat-dialog-actions>
+</ng-template>

@@ -1,0 +1,36 @@
+.headerBg {
+    background-color: #0950a1;
+}
+.headerBg .col-md-11 h4 {
+    color: #fff;
+    padding: 13px 10px 5px;
+    margin-bottom: 0px;
+    font-size:18px;
+}
+.headerBg a {
+    cursor:default;
+}
+.signIn {
+    padding-top: 13px;
+    text-align: right;
+    color: #fff;
+}
+.signIn h6 {
+    display: inline-block;
+    margin-right: 13px;
+    font-size:13px;
+}
+.bi.bi-person-circle, .bi.bi-chevron-down {
+    margin-left: 10px;
+}
+.bi.bi-chevron-down {
+    font-size: 14px;
+}
+
+.signOut {
+    cursor: pointer;
+    display: inline-block;
+    border-left: 2px solid #fff;
+    padding-left: 10px;
+    font-size:13px;
+}
